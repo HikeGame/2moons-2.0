@@ -24,7 +24,7 @@
 	<link rel="stylesheet" type="text/css" href="./styles/resource/css/base/jquery.css?v={$REV}">
 	<link rel="stylesheet" type="text/css" href="./styles/resource/css/base/jquery.fancybox.css?v={$REV}">
 	<link rel="stylesheet" type="text/css" href="./styles/resource/css/base/validationEngine.jquery.css?v={$REV}">
-	<link rel="stylesheet" type="text/css" href="./styles/theme/gow/formate.css?v={$REV}">
+	<link rel="stylesheet" type="text/css" href="./styles/theme/gow/ingame.css?v={$REV}">
 	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
 	<script type="text/javascript">
 	var ServerTimezoneOffset = {$Offset};
