@@ -319,16 +319,17 @@ HTML;
 			require_once 'includes/classes/missions/functions/calculateSteal.php';
 			$stealResource = calculateSteal($fleetAttack, $targetPlanet);
 		}
-		
-		if($this->_fleet['fleet_end_type'] == 3)
-		{
-			// Use planet debris, if attack on moons
-			$sql			= "SELECT der_metal, der_crystal FROM %%PLANETS%% WHERE id_luna = :moonId;";
-			$targetDebris	= $db->selectSingle($sql, array(
-				':moonId'	=> $this->_fleet['fleet_end_id']
-			));
-			$targetPlanet 	+= $targetDebris;
-		}
+
+        if($this->_fleet['fleet_end_type'] == 3)
+        {
+            // Use planet debris, if attack on moons
+            $sql							= "SELECT der_metal, der_crystal FROM %%PLANETS%% WHERE id_luna = :moonId;";
+            $targetDebris					= $db->selectSingle($sql, array(
+                ':moonId'	=> $this->_fleet['fleet_end_id']
+            ));
+            $targetPlanet['der_metal']		= $targetDebris['der_metal'];
+            $targetPlanet['der_crystal']	= $targetDebris['der_crystal'];
+        }
 		
 		foreach($debrisResource as $elementID)
 		{

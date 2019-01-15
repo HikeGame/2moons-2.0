@@ -1,3 +1,22 @@
+### _v2.0.1	Danter14 14.08.2018_
+[Modules] :
+- none
+
+[Bugs] :
+- none
+
+[Improvements] :
+- none
+
+[Optimization] :
+- none
+
+[Design] :
+- none
+
+[Panel administration] :
+- none
+
 ### _v2.0.0	Danter14 17.02.2018_
 [Modules] :
 - Percentage with bar and text for real-time resources
