@@ -25,6 +25,8 @@
 
 [Bugs] :
 - Fix of the language buddyList
+- Fix bug for debris fields on the moon that replace the fields already in place by byazrail
+- Fix bug, with destroyed moon by Kaizoku
 
 [Improvements] :
 - Ability to make high speed server
