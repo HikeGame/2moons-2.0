@@ -288,6 +288,8 @@ CREATE TABLE `%PREFIX%config` (
   `disclamerMail` text NOT NULL,
   `disclamerNotice` text NOT NULL,
   `alliance_create_min_points` BIGINT UNSIGNED NOT NULL DEFAULT 0,
+  `expedition_limit_res_active` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `expedition_limit_res` double(255,0) unsigned NOT NULL DEFAULT '1000000',
   PRIMARY KEY (`uni`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 

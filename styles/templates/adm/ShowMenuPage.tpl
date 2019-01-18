@@ -6,6 +6,7 @@
 		{if allowedTo('ShowInformationPage')}<li><a href="?page=infos" target="Hauptframe">{$LNG.mu_game_info}</a></li>{/if}
 		{if allowedTo('ShowConfigBasicPage')}<li><a href="?page=config" target="Hauptframe">{$LNG.mu_settings}</a></li>{/if}
 		{if allowedTo('ShowConfigUniPage')}<li><a href="?page=configuni" target="Hauptframe">{$LNG.mu_unisettings}</a></li>{/if}
+		{if allowedTo('ShowConfigModsPage')}<li><a href="?page=configmods" target="Hauptframe">{$LNG.mu_mods_settings}</a></li>{/if}
 		{if allowedTo('ShowChatConfigPage')}<li><a href="?page=chat" target="Hauptframe">{$LNG.mu_chat}</a></li>{/if}
 		{if allowedTo('ShowTeamspeakPage')}<li><a href="?page=teamspeak" target="Hauptframe">{$LNG.mu_ts_options}</a></li>{/if}
 		{if allowedTo('ShowFacebookPage')}<li><a href="?page=facebook" target="Hauptframe">{$LNG.mu_fb_options}</a></li>{/if}

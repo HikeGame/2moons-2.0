@@ -122,7 +122,11 @@ class MissionCaseExpedition extends MissionFunctions implements Mission
 					$maxFactor		= 2400;
 				}
 
-				$founded		= round(min($fleetCapacity,min($maxFactor, max(200, $factor)) * $fleetPoints));
+                if ($config->expedition_limit_res_active == 1) {
+                    $founded		= round(min($config->expedition_limit_res, $fleetCapacity));
+                } else {
+                    $founded		= round(min($fleetCapacity,min($maxFactor, max(200, $factor)) * $fleetPoints));
+                }
 
 				$fleetColName	= 'fleet_resource_'.$resource[$resourceId];
 				$this->UpdateFleet($fleetColName, $this->_fleet[$fleetColName] + $founded);

@@ -66,6 +66,10 @@ switch($page)
 		include_once('includes/pages/adm/ShowConfigUniPage.php');
 		ShowConfigUniPage();
 	break;
+    case 'configmods':
+        include_once('includes/pages/adm/ShowConfigModsPage.php');
+        ShowConfigModsPage();
+        break;
 	case 'chat':
 		include_once('includes/pages/adm/ShowChatConfigPage.php');
 		ShowChatConfigPage();

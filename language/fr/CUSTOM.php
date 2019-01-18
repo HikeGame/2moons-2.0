@@ -44,3 +44,15 @@ $LNG['ov_create_moon']			= "Créer une lune";
 $LNG['ov_list_title_build']		= "Bâtiment";
 $LNG['ov_list_title_tech']		= "Recherche";
 $LNG['ov_list_title_fleet']		= "Flotte/Défense";
+
+/**
+ * Admin
+ */
+// ShowMenuPage.tpl
+$LNG['mu_mods_settings'] = "Configurer les Mods";
+// ConfigModsBody.tpl
+$LNG['msg_expedition'] = "Configuration Expédition";
+$LNG['msg_expedition_active'] = "Système de limite";
+$LNG['msg_expedition_active_desc'] = "Lors de l'activation de ce système vous pouvez mettre une limite sur les ressource trouver lors d'une expédition par les joueurs";
+$LNG['msg_expedition_active_price'] = "Montant des ressources maximum";
+$LNG['msg_expedition_active_price_desc'] = "Montant maximum que le joueur peut trouver lors d'une expédition même si la capacité est supérieur";
