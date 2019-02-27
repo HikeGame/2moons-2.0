@@ -27,7 +27,8 @@ $LNG['mn_username']			= "Nutzername";
  * page.overview.default.tpl
 **/
 $LNG['ov_online_user']			= "Verbundener Spieler";
-$LNG['ov_ticket']				= "Fahrkarte";
+$LNG['ov_ticket']				= "Support";
 $LNG['ov_list_title_build']		= "Gebäude";
 $LNG['ov_list_title_tech']		= "Forschung";
 $LNG['ov_list_title_fleet']		= "Fuhrpark/Verteidigung";
+$LNG['ov_create_moon']			= "Kein Mond vorhanden";
