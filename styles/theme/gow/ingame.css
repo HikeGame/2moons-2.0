@@ -1,6 +1,6 @@
 /** Edit Color here **/
 
-#.ui-widget-header{
+.ui-widget-header{
 	background-color:#D20000;
 }
 .res_name{
@@ -8,7 +8,7 @@
 }
 
 body {
-	background:url("img/bkd_page.jpg") no-repeat fixed center center #0d0d0d;
+	background:url("img/bg.jpg") no-repeat fixed center center #0d0d0d;
 	min-width: 1000px;
 }
 

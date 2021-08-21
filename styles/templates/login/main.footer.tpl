@@ -19,7 +19,9 @@ var LoginConfig = {
 try{
 var pageTracker = _gat._getTracker("{$analyticsUID}");
 pageTracker._trackPageview();
-} catch(err) {}</script>
+} catch(err) {
+	print_r(err);
+}</script>
 {/if}
 </body>
 </html>

@@ -32,3 +32,15 @@ $LNG['ov_list_title_build']		= "Gebäude";
 $LNG['ov_list_title_tech']		= "Forschung";
 $LNG['ov_list_title_fleet']		= "Fuhrpark/Verteidigung";
 $LNG['ov_create_moon']			= "Kein Mond vorhanden";
+
+/**
+ * Admin
+ */
+// ShowMenuPage.tpl
+$LNG['mu_mods_settings'] = "Mods konfigurieren";
+// ConfigModsBody.tpl
+$LNG['msg_expedition'] = "Versandkonfiguration";
+$LNG['msg_expedition_active'] = "Limitsystem";
+$LNG['msg_expedition_active_desc'] = "Wenn Sie dieses System aktivieren, können Sie die Ressourcen begrenzen, die während einer Expedition durch die Spieler zu finden sind";
+$LNG['msg_expedition_active_price'] = "Maximale Menge an Ressourcen";
+$LNG['msg_expedition_active_price_desc'] = "Maximale Menge, die der Spieler auf einer Expedition finden kann, auch wenn die Kapazität höher ist";

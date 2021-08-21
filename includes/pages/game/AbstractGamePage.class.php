@@ -158,12 +158,12 @@ abstract class AbstractGamePage
 			'resourceTable'		=> $resourceTable,
 			'shortlyNumber'		=> $themeSettings['TOPNAV_SHORTLY_NUMBER'],
 			'closed'			=> !$config->game_disable,
-			'hasBoard'			=> filter_var($config->forum_url, FILTER_VALIDATE_URL, FILTER_FLAG_SCHEME_REQUIRED),
+			'hasBoard'			=> filter_var($config->forum_url, FILTER_VALIDATE_URL),
 			'hasAdminAccess'	=> !empty(Session::load()->adminAccess),
 			'hasGate'			=> $PLANET[$resource[43]] > 0,
 			'username'			=> $USER['username'],
-			'previousPlanet'	=> $previousPlanet['id'],
-			'nextPlanet'		=> $nextPlanet['id'],
+			'previousPlanet'	=> $previousPlanet['id'] ?? '',
+			'nextPlanet'		=> $nextPlanet['id'] ?? '',
 		));
 	}
 

@@ -469,7 +469,8 @@ function exceptionHandler($exception)
 		E_USER_WARNING		=> 'USER WARNING',
 		E_USER_NOTICE		=> 'USER NOTICE',
 		E_STRICT			=> 'STRICT NOTICE',
-		E_RECOVERABLE_ERROR	=> 'RECOVERABLE ERROR'
+		E_RECOVERABLE_ERROR	=> 'RECOVERABLE ERROR',
+        E_DEPRECATED => 'DEPRECATED ERROR'
 	);
 	
 	if(file_exists(ROOT_PATH.'install/VERSION'))
@@ -504,12 +505,13 @@ function exceptionHandler($exception)
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="de" class="no-js"> <!--<![endif]-->
 <head>
 	<title>'.$gameName.' - '.$errorType[$errno].'</title>
-	<meta name="generator" content="2Moons '.$VERSION.'">
+	<meta name="generator" content="Space-Tactics '.$VERSION.'">
 	<!-- 
-		This website is powered by 2Moons '.$VERSION.'
+		This website is powered by early 2Moons
 		2Moons is a free Space Browsergame initially created by Jan Kröpke and licensed under GNU/GPL.
 		2Moons is copyright 2009-2013 of Jan Kröpke. Extensions are copyright of their respective owners.
-		Information and contribution at http://2moons.cc/
+		Space-Tactics is a fork of 2moons and since 2021 under active development
+		Information and contribution at http://Space-Tactics.com/
 	-->
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" type="text/css" href="'.$DIR.'/styles/resource/css/base/boilerplate.css?v='.$VERSION.'">

@@ -61,11 +61,13 @@ function ShowNewsPage(){
 			'nws_head'		=> $LNG['nws_head_create'],
 		));
 	}
-	
+
+
+
 	$template->assign_vars(array(	
 		'NewsList'		=> $NewsList,
 		'button_submit'	=> $LNG['button_submit'],
-		'nws_total'		=> sprintf($LNG['nws_total'], (!isset($NewsList) ? count($NewsList) : 0)),
+		'nws_total'		=> sprintf($LNG['nws_total'], (isset($NewsList) ? count($NewsList) : 0)),
 		'nws_news'		=> $LNG['nws_news'],
 		'nws_id'		=> $LNG['nws_id'],
 		'nws_title'		=> $LNG['nws_title'],

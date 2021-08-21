@@ -1,4 +1,4 @@
-### _v2.0.1	Danter14 14.08.2018_
+### _v2.0.2	ShaoKhan 21.08.2021_
 [Modules] :
 - none
 
@@ -17,26 +17,20 @@
 [Panel administration] :
 - none
 
-### _v2.0.0	Danter14 17.02.2018_
 [Modules] :
-- Percentage with bar and text for real-time resources
-- Number of players connect
-- Planet change with arrows
+- none
 
 [Bugs] :
-- Fix of the language buddyList
-- Fix bug for debris fields on the moon that replace the fields already in place by byazrail
-- Fix bug, with destroyed moon by Kaizoku
+- none
 
 [Improvements] :
-- Ability to make high speed server
+- none
 
 [Optimization] :
-- Switching to php version 7.2
+- none
 
 [Design] :
-- Redesign of the bootstrap 4 login page
-- Redesign Ingame by Danter14
+- none
 
 [Panel administration] :
 - none
