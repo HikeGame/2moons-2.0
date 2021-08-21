@@ -112,7 +112,7 @@
 	<td><img src="./styles/resource/images/admin/i.gif" width="16" height="16" alt="" class="tooltip" data-tooltip-content="{$LNG.se_google_info}"></td>
 </tr><tr>
     <td>{$LNG.se_google_key}</td>
-    <td><input name="ga_key" size="20" maxlength="15" value="{$ga_key}" type="text"></td>
+    <td><input name="ga_key" size="20" maxlength="" value="{$ga_key}" type="text"></td>
 	<td><img src="./styles/resource/images/admin/i.gif" width="16" height="16" alt="" class="tooltip" data-tooltip-content="{$LNG.se_google_key_info}"></td>
 </tr><tr>
 	<td colspan="3"><input value="{$LNG.se_save_parameters}" type="submit"></td>
