@@ -26,7 +26,7 @@
 			{if isModuleAvailable($smarty.const.MODULE_TECHTREE)}<li><a href="game.php?page=techtree"><i class="fas fa-flask"></i></a></li>{/if}
 			{if isModuleAvailable($smarty.const.MODULE_BUDDYLIST)}<li><a href="game.php?page=buddyList"><i class="fas fa-user-circle"></i></a></li>{/if}
 			{if isModuleAvailable($smarty.const.MODULE_BANLIST)}<li><a href="game.php?page=banList"><i class="fas fa-user-times"></i></a></li>{/if}
-			{if !empty($hasBoard)}<li><a href="game.php?page=board" target="forum"><i class="fas fa-comment-alt"></i></a></li>{/if}
+			{*{if !empty($hasBoard)}<li><a href="game.php?page=board" target="forum"><i class="fas fa-comment-alt"></i></a></li>{/if}*}
 			{if isModuleAvailable($smarty.const.MODULE_CHAT)}<li><a href="game.php?page=chat"><i class="fas fa-comments"></i></a></li>{/if}
 			<li><a href="game.php?page=questions"><i class="fas fa-book"></i></a></li>
 			<li><a href="game.php?page=settings"><i class="fas fa-wrench"></i></a></li>

@@ -4,29 +4,37 @@
 	</div>
 
 	<div class="menu_content_left">
-		{if isModuleAvailable($smarty.const.MODULE_BUILDING)}<a href="game.php?page=buildings">{$LNG.lm_buildings}</a>{/if}
-		{if isModuleAvailable($smarty.const.MODULE_RESEARCH)}<a href="game.php?page=research">{$LNG.lm_research}</a>{/if}
-		{if isModuleAvailable($smarty.const.MODULE_SHIPYARD_FLEET)}<a href="game.php?page=shipyard&amp;mode=fleet">{$LNG.lm_shipshard}</a>{/if}
-		{if isModuleAvailable($smarty.const.MODULE_SHIPYARD_DEFENSIVE)}<a href="game.php?page=shipyard&amp;mode=defense">{$LNG.lm_defenses}</a>{/if}
-		{if isModuleAvailable($smarty.const.MODULE_OFFICIER) || isModuleAvailable($smarty.const.MODULE_DMEXTRAS)}<a href="game.php?page=officier">{$LNG.lm_officiers}</a>{/if}
-		{if isModuleAvailable($smarty.const.MODULE_FLEET_TRADER)}<a href="game.php?page=fleetDealer">{$LNG.lm_fleettrader}</a>{/if}
-		{if isModuleAvailable($smarty.const.MODULE_TRADER)}<a href="game.php?page=fleetTable">{$LNG.lm_fleet}</a>{/if}
-		{if isModuleAvailable($smarty.const.MODULE_RESSOURCE_LIST)}<a href="game.php?page=resources">{$LNG.lm_resources}</a>{/if}
-		{if isModuleAvailable($smarty.const.MODULE_GALAXY)}<a href="game.php?page=galaxy">{$LNG.lm_galaxy}</a>{/if}
-		{if isModuleAvailable($smarty.const.MODULE_ALLIANCE)}<a href="game.php?page=alliance">{$LNG.lm_alliance}</a>{/if}
-		{if isModuleAvailable($smarty.const.MODULE_SUPPORT)}<a href="game.php?page=ticket">{$LNG.lm_support}</a>{/if}
-		<a href="index.php?page=rules" target="rules">{$LNG.lm_rules}</a>
-		{if isModuleAvailable($smarty.const.MODULE_SIMULATOR)}<a href="game.php?page=battleSimulator">{$LNG.lm_battlesim}</a>{/if}
-		{if isModuleAvailable($smarty.const.MODULE_NOTICE)}<a href="javascript:OpenPopup('?page=notes', 'notes', 720, 300);">{$LNG.lm_notes}</a>{/if}
+		{if isModuleAvailable($smarty.const.MODULE_BUILDING)}<div class="menu_content_left-link"><a href="game.php?page=buildings">{$LNG.lm_buildings}</a></div>{/if}
+		{if isModuleAvailable($smarty.const.MODULE_RESEARCH)}<div class="menu_content_left-link"><a href="game.php?page=research">{$LNG.lm_research}</a></div>{/if}
+		{if isModuleAvailable($smarty.const.MODULE_SHIPYARD_FLEET)}<div class="menu_content_left-link"><a href="game.php?page=shipyard&amp;mode=fleet">{$LNG.lm_shipshard}</a></div>{/if}
+		{if isModuleAvailable($smarty.const.MODULE_SHIPYARD_DEFENSIVE)}<div class="menu_content_left-link"><a href="game.php?page=shipyard&amp;mode=defense">{$LNG.lm_defenses}</a></div>{/if}
+		{if isModuleAvailable($smarty.const.MODULE_OFFICIER) || isModuleAvailable($smarty.const.MODULE_DMEXTRAS)}<div class="menu_content_left-link"><a href="game.php?page=officier">{$LNG.lm_officiers}</a></div>{/if}
+		{if isModuleAvailable($smarty.const.MODULE_FLEET_TRADER)}<div class="menu_content_left-link"><a href="game.php?page=fleetDealer">{$LNG.lm_fleettrader}</a></div>{/if}
+		{if isModuleAvailable($smarty.const.MODULE_TRADER)}<div class="menu_content_left-link"><a href="game.php?page=fleetTable">{$LNG.lm_fleet}</a></div>{/if}
+		{if isModuleAvailable($smarty.const.MODULE_RESSOURCE_LIST)}<div class="menu_content_left-link"><a href="game.php?page=resources">{$LNG.lm_resources}</a></div>{/if}
+		{if isModuleAvailable($smarty.const.MODULE_GALAXY)}<div class="menu_content_left-link"><a href="game.php?page=galaxy">{$LNG.lm_galaxy}</a></div>{/if}
+		{if isModuleAvailable($smarty.const.MODULE_ALLIANCE)}<div class="menu_content_left-link"><a href="game.php?page=alliance">{$LNG.lm_alliance}</a></div>{/if}
+		{if isModuleAvailable($smarty.const.MODULE_SUPPORT)}<div class="menu_content_left-link"><a href="game.php?page=ticket">{$LNG.lm_support}</a></div>{/if}
+		<div class="menu_content_left-link"><a href="index.php?page=rules" target="rules">{$LNG.lm_rules}</a></div>
+		{if isModuleAvailable($smarty.const.MODULE_SIMULATOR)}<div class="menu_content_left-link"><a href="game.php?page=battleSimulator">{$LNG.lm_battlesim}</a></div>{/if}
+		{if isModuleAvailable($smarty.const.MODULE_NOTICE)}<div class="menu_content_left-link"><a href="javascript:OpenPopup('?page=notes', 'notes', 720, 300);">{$LNG.lm_notes}</a></div>{/if}
+
 		<div class="clear"></div>
 	</div>
 
 	<div class="menu_content_full">
 		{if $authlevel > 0}<a href="./admin.php" style="color:lime">{$LNG.lm_administration}</a>{/if}
+		{if $authlevel > 0}
+			<div class=""><a href="#" style="color:#9A2806">
+					<a href="https://browsermmorpg.com/vote.php?id=1642" target="_blank" title="Vote at Browser MMORPG"><img src="https://browsermmorpg.com/img/vote_banner.gif" alt="Vote at Browser MMORPG" /></a>
+				</a></div>
+			{*<div class=""><a href="#" style="color:#9A2806">Vote 2</a></div>
+			<div class=""><a href="#" style="color:#9A2806">Vote 3</a></div>*}
+		{/if}
 	</div>
 
 	<div class="menu_footer">
 		<div><i class="fas fa-clock"></i> <span class="servertime">{$servertime}</span></div>
-		<div><i class="far fa-copyright"></i> Copyright {$game_name} 2018</div>
+		<div><i class="far fa-copyright"></i> Copyright {$game_name} 2021</div>
 	</div>
 </div>

@@ -49,7 +49,7 @@ $LNG['time_minutes']	= 'Minutos';
 $LNG['time_seconds']	= 'Segundos';
 //###########################################################//
 
-$LNG['info_information']	= 'Para información y reporte de errores ir a <a href="%s" target="tracker">2Moons Board</a><br>¡No hay soporte de otra forma!';
+$LNG['info_information']	= 'Para información y reporte de errores ir a <a href="%s" target="tracker">Space-Tactics Board</a><br>¡No hay soporte de otra forma!';
 
 //---------------	¿SI O NO? - YES OR NO? - JA ODER NEIN?	------------------------// 
 $LNG['one_is_yes_1']	= 'Sí';
@@ -308,9 +308,9 @@ $LNG['ma_modes']				= array('Mensaje Interno', 'Correo Electrónico', 'Mensaje i
 //###########################################################//
 
 //---------------	PÁGINA DE INICIO - OVERVIEW	------------------------//
-$LNG['ow_title']					= 'Bienvenido a 2Moons';
+$LNG['ow_title']					= 'Bienvenido a Space-Tactics';
 $LNG['ow_donate']					= 'Donar';
-$LNG['ow_welcome_text']				= 'Bienvenido al siempre popular 2Moons.  (:';
+$LNG['ow_welcome_text']				= 'Bienvenido al nuovo Space-Tactics.  (:';
 $LNG['ow_overview']					= 'Panel de Control';
 $LNG['ow_support']					= 'Soporte';
 $LNG['ow_credits']					= 'Créditos';
@@ -416,7 +416,7 @@ $LNG['se_smtp_pass']					= 'Contraseña SMTP:';
 $LNG['se_smtp_sendmail']				= 'Dirección del Remitente:';
 $LNG['se_smtp_sendmail_info']			= 'Dirección de Correo de Retorno. No es necesario que sea la misma dirección que el remitente';
 $LNG['se_ftp']							= 'Configuración de FTP';
-$LNG['se_ftp_info']						= 'El programa 2Moons tiene la capacidad de actualizar directamente desde el servidor 2Moon Software Support a través de FTP. Para aprovechar esta característica, es necesario configurar una cuenta FTP en tu servidor y rellenar la información requerida a continuación. Esto NO creará un problema de seguridad en tu servidor, ya que el Software 2Moons requiere esta información para realizar la transferencia física a tu servidor';
+$LNG['se_ftp_info']						= 'El programa Space-Tactics tiene la capacidad de actualizar directamente desde el servidor 2Moon Software Support a través de FTP. Para aprovechar esta característica, es necesario configurar una cuenta FTP en tu servidor y rellenar la información requerida a continuación. Esto NO creará un problema de seguridad en tu servidor, ya que el Software Space-Tactics requiere esta información para realizar la transferencia física a tu servidor';
 $LNG['se_ftp_host']						= 'Host FTP:';
 $LNG['se_ftp_user']						= 'usuario FTP:';
 $LNG['se_ftp_pass']						= 'Contraseña FTP:';
@@ -1141,8 +1141,8 @@ $LNG['up_del']						= 'Eliminar';
 $LNG['up_submit']						= 'Enviar';
 $LNG['up_version']						= 'Versión';
 $LNG['up_chmod_error']					= "No se poseen permisos de escritura en este directorio:\n\n%s";
-$LNG['up_need_curl']					= 'Error: cURL no está disponible.<br />El Sistema de Actualizaciones de 2Moons requiere cURL para poder descargar los archivos actualizados.';
-$LNG['up_no_xml_ext']					= 'Error:. Analizador XML no existe.<br />La actualización del sistema de 2Moons, requiere analizador XML para procesar los archivos actuales.';
+$LNG['up_need_curl']					= 'Error: cURL no está disponible.<br />El Sistema de Actualizaciones de Space-Tactics requiere cURL para poder descargar los archivos actualizados.';
+$LNG['up_no_xml_ext']					= 'Error:. Analizador XML no existe.<br />La actualización del sistema de Space-Tactics, requiere analizador XML para procesar los archivos actuales.';
 $LNG['up_offline']					= 'El Servidor de actualización no está disponible en este momento.';
 
 //Chat Page

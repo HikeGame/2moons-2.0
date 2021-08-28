@@ -58,7 +58,7 @@ $LNG['time_minutes'] = 'Dakika';
 $LNG['time_seconds'] = 'Saniye';
 //###########################################################//
 
-$LNG['info_information'] = 'Buglari foruma  <a href="%s" target="tracker">2Moons</a><br>yada destek sayfasindan bildirebilirsiniz!';
+$LNG['info_information'] = 'Buglari foruma  <a href="%s" target="tracker">Space-Tactics</a><br>yada destek sayfasindan bildirebilirsiniz!';
 
 //---------------	Evet yada Hayir	------------------------//
 $LNG['one_is_yes_1'] = 'Evet';

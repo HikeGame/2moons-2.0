@@ -4,7 +4,7 @@
 	{if $resourceID != 921}
 	<div id="bar-1" class="bar-main-container">
 	    <div class="wrap">
-	      <div class="bar-percentage"><img src="{$dpath}images/{$resourceData.name}.gif" alt=""></div>
+	      <div class="bar-percentage"><img src="{$dpath}images/{$resourceData.name}.png" alt=""></div>
 	      <div class="bar-container">
 	        <div class="bar bar_{$resourceID}" style="width: 0%;"></div>
 	        <div class="bar-text">
@@ -16,7 +16,8 @@
 						<span class="res_current tooltip" id="current_{$resourceData.name}" data-real="{$resourceData.current}" data-tooltip-content="{$LNG.tech.$resourceID} <br> {$resourceData.current|number} <br> {if !isset($resourceData.current) || !isset($resourceData.max)}
 						{else}
 						<span class='res_max' id='max_{$resourceData.name}' data-real='{$resourceData.max}'>{shortly_number($resourceData.max)}</span>
-						{/if}">{shortly_number($resourceData.current)}</span>
+						{/if}">{shortly_number($resourceData.current)}
+						</span><span class=""> / {$resourceData.production|number_format:0:',':'.'} {$LNG.perHour}</span>
 					{/if}
 		        {else}
 					{if !isset($resourceData.current)}
@@ -52,23 +53,35 @@
 	{/foreach}
 	<div class="clear"></div>
 
+	{*<script>
+		function count_res(){
+			var met = {$resourceData.production};
+			setTimeout(function() {
+				//$('.rescounter_met').html(met);
+
+			}, 1000);
+		}
+	</script>*}
+
 		{if !$vmode}
 		<script type="text/javascript">
 		var viewShortlyNumber	= {$shortlyNumber|json};
 		var vacation			= {$vmode};
         $(function() {
-		{foreach $resourceTable as $resourceID => $resourceData}
-		{if isset($resourceData.production)}
-            resourceTicker({
-                available: {$resourceData.current|json},
-                limit: [0, {$resourceData.max|json}],
-                production: {$resourceData.production|json},
-                valueElem: "current_{$resourceData.name}",
-                valuePoursent: "bar_{$resourceID}"
-            }, true);
-		{/if}
-		{/foreach}
+			{foreach $resourceTable as $resourceID => $resourceData}
+				{if isset($resourceData.production)}
+					resourceTicker({
+						available: {$resourceData.current|json},
+						limit: [0, {$resourceData.max|json}],
+						production: {$resourceData.production|json},
+						valueElem: "current_{$resourceData.name}",
+						valuePoursent: "bar_{$resourceID}",
+						currentProd: {$resourceData.production|json}
+					}, true);
+				{/if}
+			{/foreach}
         });
+
 		</script>
         <script src="scripts/game/topnav.js"></script>
         {if $hasGate}<script src="scripts/game/gate.js"></script>{/if}

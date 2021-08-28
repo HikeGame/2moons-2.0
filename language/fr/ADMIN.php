@@ -37,7 +37,7 @@ $LNG['time_minutes']					= 'Minutes';
 $LNG['time_seconds']					= 'Secondes';
 //###########################################################//
 
-$LNG['info_information']	= 'Soumettre les bugs à : <a href="%s" target="tracker">2Moons Board</a><br>Ou bien Il n\'y a aucun support !';
+$LNG['info_information']	= 'Soumettre les bugs à : <a href="%s" target="tracker">Space-Tactics Board</a><br>Ou bien Il n\'y a aucun support !';
 
 //---------------	�SI O NO? - YES OR NO? - JA ODER NEIN?	------------------------//
 $LNG['one_is_yes_1']					= 'Oui';
@@ -305,9 +305,9 @@ $LNG['ma_modes']				= array('INGAME Message', 'E-Mail Message', 'INGAME & E-Mail
 //###########################################################//
 
 //---------------	OVERVIEW	------------------------//
-$LNG['ow_title']					= 'Bienvenue sur Xnova Reborn';
+$LNG['ow_title']					= 'Bienvenue sur Space-Tactics';
 $LNG['ow_donate']					= 'Donation';
-$LNG['ow_welcome_text']			    = 'Bienvenue sur le server Xnova Reborn';
+$LNG['ow_welcome_text']			    = 'Bienvenue sur le server Space-Tactics';
 $LNG['ow_overview']					= 'Panneau de configuration';
 $LNG['ow_support']					= 'Support';
 $LNG['ow_credits']					= 'Credits';
@@ -421,7 +421,7 @@ $LNG['se_news']						= 'Actualités';
 $LNG['se_verfiy_mail']					= 'Vérification de l\'adresse Mail';
 $LNG['se_verfiy_mail_info']				= 'Si ce paramètre est actif, les joueurs devront cliquer sur un lien d\'activation qui leur ait envoyé par email.<br>Note: Cela nécessite que les paramètres SMTP pour le serveur SMTP soient remplis ci-dessous.';
 $LNG['se_smtp']						= 'Paramètres SMTP';
-$LNG['se_smtp_info']					= 'Entrez votre serveur SMTP ici. Cela permet au logiciel 2Moons de communiquer avec vos joueurs à travers votre serveur SMTP.';
+$LNG['se_smtp_info']					= 'Entrez votre serveur SMTP ici. Cela permet au logiciel Space-Tactics de communiquer avec vos joueurs à travers votre serveur SMTP.';
 $LNG['se_mail_active']					= 'Activer la messagerie';
 $LNG['se_mail_use']						= 'Messagerie actuelle';
 $LNG['se_mail_sel_0']					= 'PHP mail() Fonction';
@@ -442,7 +442,7 @@ $LNG['se_smtp_pass']					= 'Mot de passe SMTP : ';
 $LNG['se_smtp_sendmail']               			= 'Expéditeur SMTP :';
 $LNG['se_smtp_sendmail_info']          			= 'C\'est là que votre courrier revient. L\'adresse courriel de retour entré ici, n\'a pas besoin d\'être la même que l\'adresse électronique d\'envoi';
 $LNG['se_ftp']						= 'Paramètres FTP';
-$LNG['se_ftp_info']					= 'Votre logiciel 2Moons est livré avec la capacité de se mettre à jour directement depuis le serveur 2Moons via FTP. Pour profiter de cette fonctionnalité, vous aurez besoin de configurer un compte FTP sur votre serveur, puis entrez les informations requises ci-dessous. Cela ne créera pas un problème de sécurité pour vous comme le logiciel 2Moons a besoin de cette information pour faire le transfert de fichiers physique depuis votre serveur.';
+$LNG['se_ftp_info']					= 'Votre logiciel Space-Tactics est livré avec la capacité de se mettre à jour directement depuis le serveur Space-Tactics via FTP. Pour profiter de cette fonctionnalité, vous aurez besoin de configurer un compte FTP sur votre serveur, puis entrez les informations requises ci-dessous. Cela ne créera pas un problème de sécurité pour vous comme le logiciel Space-Tactics a besoin de cette information pour faire le transfert de fichiers physique depuis votre serveur.';
 $LNG['se_ftp_host']					= 'Hôte FTP :';
 $LNG['se_ftp_user']					= 'Utilisateur FTP :';
 $LNG['se_ftp_pass']					= 'Mot de passe FTP :';
@@ -1176,8 +1176,8 @@ $LNG['up_del']							= 'Supprimer :';
 $LNG['up_submit']						= 'Envoyer';
 $LNG['up_version']						= 'Version';
 $LNG['up_chmod_error']					= 'Aucune permission d\'écriture pour le dossier:\n\n%s';
-$LNG['up_need_curl']					= 'Erreur: cURL n\'est pas disponible.<br />2Moons système de mise à jour nécessite cURL, pour charger les données réelles téléchargées.';
-$LNG['up_no_xml_ext']					= 'Erreur: XML Parser n\'est pas présent.<br>Le maintien de 2Moons exige Parser XML pour traiter les fichiers présents.';
+$LNG['up_need_curl']					= 'Erreur: cURL n\'est pas disponible.<br />Space-Tactics système de mise à jour nécessite cURL, pour charger les données réelles téléchargées.';
+$LNG['up_no_xml_ext']					= 'Erreur: XML Parser n\'est pas présent.<br>Le maintien de Space-Tactics exige Parser XML pour traiter les fichiers présents.';
 $LNG['up_offline']						= 'Mise a jour serveur non disponible.';
 /*
 $LNG['up_error_fsockopen']				= 'Fonction file_get_contents fsockopen désactivé';

@@ -26,7 +26,7 @@
 			<th colspan="2">{$LNG.ow_support}</th>
 		</tr>
 		<tr>
-			<td colspan="2"><a href="https://github.com/jkroepke/2Moons/" target="_blank">Project Homepage</a>
+			<td colspan="2"><a href="https://Space-Tactics.com/" target="_blank">Project Homepage</a>
 				<!--<br><a target="_blank" href="http://2moons.cc/" target="_blank">2moons.cc - {$LNG.ow_forum}</a>--></td>
 		</tr>
 		<!--
@@ -96,7 +96,7 @@
 						<td class="transparent" colspan="3"><h3>{$LNG.ow_proyect_leader}</h3></td>
 					</tr>
 					<tr>
-						<td class="transparent" colspan="3"><h3><a target="_blank" href="https://github.com/jkroepke" style="color:red">Jan</a></h3></td>
+						<td class="transparent" colspan="3"><h3><a target="_blank" href="https://Space-Tactics.com" style="color:red">ShaoKhan</a></h3></td>
 					</tr>
 				</table>
 				<div style="width:100%">

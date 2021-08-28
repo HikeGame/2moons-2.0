@@ -49,7 +49,7 @@ $LNG['time_minutes']	= 'Minuta';
 $LNG['time_seconds']	= 'Sekunda';
 //###########################################################//
 
-$LNG['info_information']	= 'Informacje o błędach i nowościach <a href="%s" target="tracker">2Moons Board</a><br>Jeśli usuniesz ten link, nie będziesz miał prawa do supportu!!!!';
+$LNG['info_information']	= 'Informacje o błędach i nowościach <a href="%s" target="tracker">Space-Tactics Board</a><br>Jeśli usuniesz ten link, nie będziesz miał prawa do supportu!!!!';
 
 //---------------	¿SI O NO? - YES OR NO? - JA ODER NEIN?	- TAK ALBO NIE------------------------// 
 $LNG['one_is_yes_1']	= 'Tak';
@@ -308,9 +308,9 @@ $LNG['ma_modes']				= array('Wiadomość w grze', 'Wiadomość na e-mail', 'W gr
 //###########################################################//
 
 //---------------	PÁGINA DE INICIO - OVERVIEW	 - PODGLĄD------------------------//
-$LNG['ow_title']					= 'Witam w 2Moons';
+$LNG['ow_title']					= 'Witam w Space-Tactics';
 $LNG['ow_donate']					= 'Dotacja';
-$LNG['ow_welcome_text']				= 'Witamy w niezwykle popularnym 2Moons. (:';
+$LNG['ow_welcome_text']				= 'Witamy w niezwykle popularnym Space-Tactics. (:';
 $LNG['ow_overview']					= 'Centrum kontroli';
 $LNG['ow_support']					= 'Wsparcie';
 $LNG['ow_credits']					= 'Credits';
@@ -416,7 +416,7 @@ $LNG['se_smtp_pass']					= 'SMTP Passwort:';
 $LNG['se_smtp_sendmail']				= 'Adres zwrotny:';
 $LNG['se_smtp_sendmail_info']			= 'Adres zwrotny powinien być inny niż adres użyty podczas instalacji';
 $LNG['se_ftp']							= 'Konfiguracja FTP';
-$LNG['se_ftp_info']						= '2Moons zawiera system aktualizacji po ftp, do tego celu musisz podać dane serwera ftp.<br>Jeśli nie będziesz go używał, zostaw to pole puste.';
+$LNG['se_ftp_info']						= 'Space-Tactics zawiera system aktualizacji po ftp, do tego celu musisz podać dane serwera ftp.<br>Jeśli nie będziesz go używał, zostaw to pole puste.';
 $LNG['se_ftp_host']						= 'FTP Host:';
 $LNG['se_ftp_user']						= 'FTP User:';
 $LNG['se_ftp_pass']						= 'FTP Passwort:';
@@ -1139,8 +1139,8 @@ $LNG['up_del']							= 'Usuń:';
 $LNG['up_submit']						= 'Wyślij';
 $LNG['up_version']						= 'Wersja';
 $LNG['up_chmod_error']					= "Brak dostępu do zappisu w folderach :\n\n";
-$LNG['up_need_curl']					= 'Błąd: cURL nie dostępny.<br />UpdateSystem gry 2Moons używa cURL, do pobrania aktualnych plików.';
-$LNG['up_no_xml_ext']					= 'Błąd: XML Parser nie dostępny.<br />UpdateSystem gry 2Moons używa XML Parser, do przetwarzania plików.';
+$LNG['up_need_curl']					= 'Błąd: cURL nie dostępny.<br />UpdateSystem gry Space-Tactics używa cURL, do pobrania aktualnych plików.';
+$LNG['up_no_xml_ext']					= 'Błąd: XML Parser nie dostępny.<br />UpdateSystem gry Space-Tactics używa XML Parser, do przetwarzania plików.';
 $LNG['up_offline']						= 'Update nie dostępny.';
 
 //Chat Page -- PL ??

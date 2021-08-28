@@ -379,8 +379,9 @@ select {
 }
 
 .bar-percentage img {
-  	width: 42px;
-    height: 16px;
+  	width: 100%;
+    height: auto;
+	margin-right: 5px;
 }
 
 .bar-container {
@@ -580,7 +581,7 @@ th a,.res_current{
 
 .ui-tabs {
 	border:1px solid #000;
-	background:transaprent;
+	background:transparent;
 }
 
 /** CSS PERSO **/

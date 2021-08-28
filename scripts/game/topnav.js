@@ -16,7 +16,8 @@ function resourceTicker(config, init) {
 	}
 	
 	var nrResource = Math.max(0, Math.floor(parseFloat(config.available) + parseFloat(config.production) / 3600 * (serverTime.getTime() - startTime) / 1000));
-	
+	var prod = parseFloat((config.currentProd) / 3600 * (serverTime.getTime() - startTime) / 1000);
+
 	if (nrResource < config.limit[1]) 
 	{
 		pourcent = Math.max(0, parseFloat(nrResource / config.limit[1]) * 100).toFixed(0);
