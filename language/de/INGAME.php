@@ -98,6 +98,7 @@ $LNG['lm_battlesim'] = 'Kampfsimulator';
 $LNG['lm_playercard'] = 'Spielerinformationen';
 $LNG['lm_info'] = 'Informationen';
 $LNG['lm_disclamer'] = 'Impressum';
+$LNG['lm_connect_ts'] = 'Verbinden';
 
 //----------------------------------------------------------------------------//
 //OVERVIEW

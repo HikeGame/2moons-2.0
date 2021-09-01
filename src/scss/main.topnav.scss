@@ -1,0 +1,16 @@
+.res_header{
+  background: rgba(67,75,66,.8);
+  padding: 5px 0;
+}
+.res_item{
+  font-size: .8em;
+
+  &.green {
+    color: #3EAD15;
+  }
+}
+
+.res_change{
+  position: relative;
+  top: 2px;
+}

@@ -101,7 +101,8 @@ $LNG['lm_battlesim']						= 'Simulador';
 $LNG['lm_playercard']                       = 'Página de Jogador';
 $LNG['lm_info']                     		= 'Informação';
 $LNG['lm_disclamer']						= 'Creditos';
-	
+$LNG['lm_connect_ts'] = 'Associado';
+
 //----------------------------------------------------------------------------//
 // Vista Geral
 

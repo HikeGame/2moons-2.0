@@ -15,6 +15,7 @@
 
 	<link rel="stylesheet" type="text/css" href="./styles/resource/css/base/boilerplate.css?v={$REV}">
 	<link rel="stylesheet" type="text/css" href="./styles/resource/css/ingame/main.css?v=">
+	<link rel="stylesheet" type="text/css" href="./styles/resource/css/ingame/index.css?v=">
 	<link rel="stylesheet" type="text/css" href="./styles/resource/css/ingame/leftmenu.css?v=">
 	<link rel="stylesheet" type="text/css" href="./styles/resource/css/base/jquery.css?v={$REV}">
 	<link rel="stylesheet" type="text/css" href="./styles/resource/css/base/jquery.fancybox.css?v={$REV}">

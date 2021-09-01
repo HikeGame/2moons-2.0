@@ -97,6 +97,7 @@ $LNG['lm_battlesim']						= "Sim. de Batallas";
 $LNG['lm_playercard']                       = 'Información del Jugador';
 $LNG['lm_info']                     		= 'Información';
 $LNG['lm_disclamer']						= 'Contacto';
+$LNG['lm_connect_ts'] = 'Asociar';
 
 //----------------------------------------------------------------------------//
 //OVERVIEW

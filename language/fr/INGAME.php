@@ -87,6 +87,7 @@ $LNG['lm_battlesim']						= 'Simulateur de Combat';
 $LNG['lm_playercard']                       = 'Profil du joueur';
 $LNG['lm_info']                     		= 'Info';
 $LNG['lm_disclamer']						= 'Crédits';
+$LNG['lm_connect_ts'] = 'Associer';
 
 //----------------------------------------------------------------------------//
 //OVERVIEW

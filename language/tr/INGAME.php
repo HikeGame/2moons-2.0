@@ -102,7 +102,7 @@ $LNG['lm_battlesim']						= 'Simulasyon';
 $LNG['lm_playercard']                       = 'Oyuncu Profili';
 $LNG['lm_info']                     		= 'Bilgi';
 $LNG['lm_disclamer']						= 'Iletisim';
-
+$LNG['lm_connect_ts'] = 'Iş arkadaşı';
 
 //----------------------------------------------------------------------------//
 // Genel

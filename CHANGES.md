@@ -6,31 +6,11 @@
 - none
 
 [Improvements] :
-- none
+- link to teamspeak³
 
 [Optimization] :
-- none
+- left menu 
+- main.topmenu responsive
 
 [Design] :
-- none
-
-[Panel administration] :
-- none
-
-[Modules] :
-- none
-
-[Bugs] :
-- none
-
-[Improvements] :
-- none
-
-[Optimization] :
-- none
-
-[Design] :
-- none
-
-[Panel administration] :
 - none

@@ -71,3 +71,4 @@ composer.phar
 
 /includes/backups/*
 !/includes/backups/.gitkeep
+/node_modules/
