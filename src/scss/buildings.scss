@@ -1,20 +1,20 @@
-.buildings_headline{
+.buildings_headline {
   text-align: center;
   background: #343a40;
   color: #FFF;
 }
 
 .build-data {
-  background: rgba(67,75,66,0.8);
+  background: rgba(67, 75, 66, 0.8);
   margin: 0 0 10px 0;
   -webkit-box-shadow: 5px 5px 15px -1px #000000;
   box-shadow: 5px 5px 15px -1px #000000;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 3rem;
-  gap: 5px 5px;
+  grid-template-rows: 2rem 1fr 3rem;
   grid-template-areas:
+    "type type"
     "image data"
     "build_button build_button";
 }
@@ -23,12 +23,25 @@
   grid-area: build_button;
 }
 
+.build-data-type{
+  grid-area: type;
+  padding: 3px 10px;
+  text-align: center;
+  font-weight: bolder;
+  background: rgba(67, 75, 66, 1);
+  -webkit-box-shadow: 5px 5px 15px -1px #000000;
+  box-shadow: 5px 5px 15px -1px #000000;
+}
+
 .build-data-image {
   grid-area: image;
 
-  img{
+  img {
     width: 100%;
     height: auto;
+    position: relative;
+    top: 10px;
+    left: 5px;
   }
 }
 
@@ -36,26 +49,52 @@
   grid-area: data;
   padding: 3px 10px;
 
-  .build-data-headline{
+  .build-data-headline {
     color: #FFF;
   }
 }
 
-.build-data_data_trash{
+.build-data_data_trash {
   padding: 0 10px 0 0;
 }
 
 
-.build-data--build-button{
+.build-data--build-button {
   width: 100%;
   background: #084111;
   color: #fff;
   margin-top: 20px;
+  -webkit-box-shadow: 0px -5px 15px 0px #000000;
+  box-shadow: 0px -5px 15px 0px #000000;
+  text-align: center;
 
-  &.red{
+  &.red {
     background: #981a05;
     color: #FFF;
-    text-align: center;
+
+    margin-top: 22px;
+    height: 26px;
+  }
+
+}
+
+.buildqueue {
+  width: 100%;
+  font-size: .8em;
+  padding: 0 25px;
+
+  &--item {
+    background: rgba(67, 75, 66, 0.8);
+    margin-bottom: 5px;
+
+    &-progressbar{
+      height: 50px;
+    }
+
+    .ui-progressbar{
+      margin: 0 0 10px 0;
+    }
+
   }
 
 }

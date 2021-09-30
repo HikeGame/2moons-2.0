@@ -31,6 +31,7 @@ $(document).ready(function() {
 	window.setTimeout(function () {
         if(time <= 0) return;
 
+        $('#progressbar').height(20);
         $('#progressbar').progressbar({
             value: Math.max(100 - (resttime / time) * 100, 0.01)
         });

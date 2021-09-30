@@ -199,8 +199,10 @@ class Database
 		if (($type = $this->getQueryType($qry)) !== "select")
 			throw new Exception("Incorrect Select Query");
 
+		
 		$stmt = $this->_query($qry, $params, $type);
 		$res = $stmt->fetch(PDO::FETCH_ASSOC);
+
 		return ($field === false || is_null($res)) ? $res : $res[$field];
 	}
 	

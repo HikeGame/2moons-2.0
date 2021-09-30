@@ -1,10 +1,6 @@
 {block name="title" prepend}{$LNG.lm_buildings}{/block}
 {block name="content"}
-    {if $authlevel > 0}
-        <style>
-
-        </style>
-
+    {*{if $authlevel > 0}*}
         <div class="container">
             <div class="col-lg-12">
                 <h2 class="buildings_headline">{$LNG.lm_buildings}</h2>
@@ -14,24 +10,64 @@
 
             <div class="col-lg-12">
                 <div class="row">
+                    {if !empty($Queue)}
+                        <div id="buildlist" class="buildqueue">
+                                {foreach $Queue as $List}
+                                    {$ID = $List.element}
+
+                                    <div class="row buildqueue--item">
+                                        <div class="col-lg-9">
+                                            {$List@iteration}.
+                                            {if !($isBusy.research && ($ID == 6 || $ID == 31)) && !($isBusy.shipyard && ($ID == 15 || $ID == 21)) && $RoomIsOk && $CanBuildElement && $BuildInfoList[$ID].buyable}
+                                                <form class="build_form" action="game.php?page=buildings" method="post">
+                                                    <input type="hidden" name="cmd" value="insert">
+                                                    <input type="hidden" name="building" value="{$ID}">
+                                                    <button type="submit"
+                                                            class="build_submit onlist">{$LNG.tech.{$ID}} {$List.level}{if $List.destroy} {$LNG.bd_dismantle}{/if}</button>
+                                                </form>
+                                            {else}{$LNG.tech.{$ID}} {$List.level} {if $List.destroy}{$LNG.bd_dismantle}{/if}{/if}
+                                            {if $List@first}
+                                            <div id="progressbar" class="buildqueue-progressbar" data-time="{$List.resttime}" title="Progress"></div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <span id="time" data-time="{$List.time}"></span>
+                                            <form action="game.php?page=buildings" method="post" class="build_form">
+                                                <input type="hidden" name="cmd" value="cancel">
+                                                <button type="submit" class="build_submit onlist">{$LNG.bd_cancel}</button>
+                                            </form>
+                                            {else}
+                                        </div>
+                                        <div  class="col-lg-3">
+                                            <form action="game.php?page=buildings" method="post" class="build_form">
+                                                <input type="hidden" name="cmd" value="remove">
+                                                <input type="hidden" name="listid" value="{$List@iteration}">
+                                                <button type="submit" class="build_submit onlist">{$LNG.bd_cancel}</button>
+                                            </form>
+                                            {/if}
+                                            <br><span style="color:lime" data-time="{$List.endtime}" class="timer">{$List.display}</span>
+                                        </div>
+                                    </div>
+                                {/foreach}
+                        </div>
+                    {/if}
+                </div>
+            </div>
+
+            <div class="col-lg-12">
+                <div class="row">
                     {foreach $BuildInfoList as $ID => $Element}
                         {counter assign="i" name="i"}
                         <div class="col-lg-6">
                             <div class="build-data">
-                                <div class="build-data-image">
-                                    {* ToDo: replace the placeholder with correct pics *}
-                                    <img src="{$dpath}gebaeude/placeholder_1.png" alt="{$LNG.tech.{$ID}}" title="{$LNG.tech.{$ID}}" />
-                                </div>
-                                <div class="build-data_data">
-                                    <div>
-                                        <span class="build-data-headline">
+                                <div class="build-data-type">
+                                    <span class="build-data-headline">
                                             <a href="#" onclick="return Dialog.info({$ID})">
                                             {$LNG.tech.{$ID}} {if $Element.level > 0} - {$LNG.bd_lvl} {$Element.level}
-                                                {if $Element.maxLevel != 255}/{$Element.maxLevel}{/if}
-                                            {/if}
+                                                    {if $Element.maxLevel != 255}/{$Element.maxLevel}{/if}
+                                                {/if}
                                             </a>
                                         </span>
-                                        <span class="build-data_data_trash" style="float: right;">
+                                    <span class="build-data_data_trash" style="float: right;">
                                             {if $Element.level > 0}
                                                 {if $ID == 43}
                                                     <a href="#" onclick="return Dialog.info({$ID})">{$LNG.bd_jump_gate_action}</a>
@@ -70,6 +106,59 @@
                                             {/if}
                                             {/if}
                                         </span>
+                                </div>
+                                <div class="build-data-image">
+                                    {* ToDo: replace the placeholder with correct pics *}
+                                    <img src="{$dpath}gebaeude/placeholder_1.png" alt="{$LNG.tech.{$ID}}" title="{$LNG.tech.{$ID}}" />
+                                </div>
+                                <div class="build-data_data">
+                                    <div>
+                                        {*<span class="build-data-headline">
+                                            <a href="#" onclick="return Dialog.info({$ID})">
+                                            {$LNG.tech.{$ID}} {if $Element.level > 0} - {$LNG.bd_lvl} {$Element.level}
+                                                {if $Element.maxLevel != 255}/{$Element.maxLevel}{/if}
+                                            {/if}
+                                            </a>
+                                        </span>
+                                        <span class="build-data_data_trash" style="float: right;">
+                                            {if $Element.level > 0}
+                                                {if $ID == 43}
+                                                    <a href="#" onclick="return Dialog.info({$ID})">{$LNG.bd_jump_gate_action}</a>
+                                                {/if}
+                                                {if ($ID == 44 && !$HaveMissiles) ||  $ID != 44}
+                                                <a class="tooltip_sticky" data-tooltip-content="
+                                                        *}{* Start Destruction Popup *}{*
+                                                        <table style='width:300px'>
+                                                            <tr>
+                                                                <th colspan='2'>{$LNG.bd_price_for_destroy} {$LNG.tech.{$ID}} {$Element.level}</th>
+                                                            </tr>
+                                                            {foreach $Element.destroyResources as $ResType => $ResCount}
+                                                            <tr>
+                                                                <td>{$LNG.tech.{$ResType}}</td>
+                                                                <td><span style='color:lime'>{$ResCount|number}</span></td>
+                                                            </tr>
+                                                            {/foreach}
+                                                            <tr>
+                                                                <td>{$LNG.bd_destroy_time}</td>
+                                                                <td>{$Element.destroyTime|time}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan='2'>
+                                                                    <form action='game.php?page=buildings' method='post' class='build_form'>
+                                                                        <input type='hidden' name='cmd' value='destroy'>
+                                                                        <input type='hidden' name='building' value='{$ID}'>
+                                                                        <button type='submit' class='build_submit onlist'>{$LNG.bd_dismantle}</button>
+                                                                    </form>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        *}{* End Destruction Popup *}{*
+                                                        ">
+                                                        <i class="fas fa-trash-alt" style="color: red; font-size: 11px;"></i>
+                                                    </a>
+                                            {/if}
+                                            {/if}
+                                        </span>*}
                                     </div>
                                     <div class="block_construct_desc_list">
                                         {foreach $Element.costResources as $RessID => $RessAmount}
@@ -131,7 +220,9 @@
                 </div>
             </div>
         </div>
-    {/if}
+    {*{/if}*}
+
+    <!--
     <div class="content_page" style="width: 95%;">
         <div class="title">
             {$LNG.lm_buildings}
@@ -293,4 +384,5 @@
         <div class="clear"></div>
 
     </div>
+    -->
 {/block}

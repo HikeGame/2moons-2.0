@@ -184,7 +184,7 @@ switch($page)
 	break;
 	case 'vertify':
 		include_once('includes/pages/adm/ShowVertify.php');
-		ShowVertify();
+		#ShowVertify();
 	break;
 	case 'cronjob':
 		include_once('includes/pages/adm/ShowCronjobPage.php');

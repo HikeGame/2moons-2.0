@@ -234,7 +234,7 @@ class ShowFleetStep1Page extends AbstractGamePage
 		$targetSystem 		= HTTP::_GP('system', 0);
 		$targetPlanet		= HTTP::_GP('planet', 0);
 		$targetPlanetType	= HTTP::_GP('planet_type', 1);
-	
+
 		if($targetGalaxy == $PLANET['galaxy'] && $targetSystem == $PLANET['system'] && $targetPlanet == $PLANET['planet'] && $targetPlanetType == $PLANET['planet_type'])
 		{
 			$this->sendJSON($LNG['fl_error_same_planet']);
@@ -267,17 +267,19 @@ class ShowFleetStep1Page extends AbstractGamePage
 				$this->sendJSON($LNG['fl_error_no_moon']);
 			}
 
-			if ($targetPlanetType != 2 && $planetData['urlaubs_modus'])
+			if ($targetPlanetType != 2 && (isset($planetData['urlaubs_modus']) && $planetData['urlaubs_modus']) )
 			{
 				$this->sendJSON($LNG['fl_in_vacation_player']);
 			}
 
-			if ($planetData['id'] != $USER['id'] && Config::get()->adm_attack == 1 && $planetData['authattack'] > $USER['authlevel'])
+			if ((isset($planetData['id']) &&$planetData['id'] != $USER['id'])
+                && Config::get()->adm_attack == 1
+                && (isset($planetData['authattack']) && $planetData['authattack'] > $USER['authlevel']))
 			{
 				$this->sendJSON($LNG['fl_admin_attack']);
 			}
 
-			if ($planetData['destruyed'] != 0)
+			if (isset($planetData['destruyed']) && $planetData['destruyed'] != 0)
 			{
 				$this->sendJSON($LNG['fl_error_not_avalible']);
 			}
@@ -294,10 +296,14 @@ class ShowFleetStep1Page extends AbstractGamePage
 
 			$multiCount	= $db->selectSingle($sql ,array(
 				':userID' => $USER['id'],
-				':dataID' => $planetData['id']
+				':dataID' => $planetData['id'] ?? ''
 			), 'count');
 
-			if(ENABLE_MULTIALERT && $USER['id'] != $planetData['id'] && $USER['authlevel'] != AUTH_ADM && $USER['user_lastip'] == $planetData['user_lastip'] && $multiCount != 2)
+			if(ENABLE_MULTIALERT &&
+                (isset($planetData['id']) && $USER['id'] != $planetData['id']) &&
+                $USER['authlevel'] != AUTH_ADM &&
+                (isset($planetData['user_lastip']) && $USER['user_lastip'] == $planetData['user_lastip']) &&
+                $multiCount != 2)
 			{
 				$this->sendJSON($LNG['fl_multi_alarm']);
 			}

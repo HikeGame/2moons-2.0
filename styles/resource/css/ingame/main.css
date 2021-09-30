@@ -395,7 +395,7 @@ div#disclamer {
 }
 
 .ui-progressbar {
-	height: 10px !important;
+	/*height: 10px !important;*/
 }
 
 .ui-progressbar-value {

@@ -21,6 +21,8 @@
 		<div class="clear"></div>
 	</div>
 	<div style="margin: 5px 5px;">
+		<a href="https://www.arena-top100.com/index.php?a=in&u=ShaoKhan" target="_blank"><img src="https://www.arena-top100.com/images/vote/mu-private-servers.png" alt="MU Online Private Servers" width="88" height="53" /></a>
+		<a href="https://topg.org/games-mmorpg/game-635023" target="_blank"><img src="https://topg.org/topg.gif" width="88" height="53" border="0" alt="Space tactics - MMORPG Free Game"></a>
 		<a href="https://browsermmorpg.com/vote.php?id=1642" target="_blank" title="Vote at Browser MMORPG"><img src="https://browsermmorpg.com/img/vote_banner.gif" alt="Vote at Browser MMORPG" /></a>
 	</div>
 	<div class="menu_content_full">
