@@ -606,7 +606,7 @@ th a,.res_current{
 
 #contentPlanet {
 	overflow: hidden;
-	width: 705px;
+	/*width: 705px;*/
 	height: 220px;
 	position: relative;
 	border: 1px solid #000;

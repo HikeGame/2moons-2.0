@@ -109,7 +109,7 @@
                                 </div>
                                 <div class="build-data-image">
                                     {* ToDo: replace the placeholder with correct pics *}
-                                    <img src="{$dpath}gebaeude/placeholder_1.png" alt="{$LNG.tech.{$ID}}" title="{$LNG.tech.{$ID}}" />
+                                    <img src="{$dpath}gebaeude/{$ID}.gif" alt="{$LNG.tech.{$ID}}" title="{$LNG.tech.{$ID}}" style="height: 220px; width: 100%;"/>
                                 </div>
                                 <div class="build-data_data">
                                     <div>

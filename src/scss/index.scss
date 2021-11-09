@@ -1,7 +1,19 @@
 @import '../../node_modules/bootstrap-scss/bootstrap';
+@import "variables";
 @import 'main.topnav.scss';
+@import "overview-player_online";
+@import "overview-fleets-movement";
 @import 'buildings';
 
 body{
   font-size: 1em;
 }
+
+.green{
+  color: $green;
+}
+
+.red{
+  color: $red;
+}
+

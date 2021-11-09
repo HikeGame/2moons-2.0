@@ -220,7 +220,7 @@ class FlyingFleetsTable
 				$EventString	= sprintf($Message, $FleetContent, $this->BuildHostileFleetPlayerLink($fleetRow), $StartType, $fleetRow['own_planetname'], GetStartAddressLink($fleetRow, $FleetType), $TargetType, $fleetRow['target_planetname'], GetTargetAddressLink($fleetRow, $FleetType), $FleetCapacity);
 			}		       
 		}
-		$EventString = '<span class="'.$FleetStatus[$Status].' '.$FleetType.'">'.$EventString.'</span>';
+		$EventString = '<div class="'.$FleetStatus[$Status].' '.$FleetType.'">'.$EventString.'</div>';
 
 		if ($Status == FLEET_OUTWARD)
 			$Time = $fleetRow['fleet_start_time'];
@@ -276,14 +276,15 @@ class FlyingFleetsTable
 		$SpyTech		= $USER[$resource[106]];
 		$Owner			= $fleetRow['fleet_owner'] == $this->userId;
 		$FleetRec		= explode(';', $fleetRow['fleet_array']);
-		$FleetPopup		= '<a href="#" data-tooltip-content="<table style=\'width:200px\'>';
+		$FleetPopup		= '<div class="col-lg-12"><a href="#" data-tooltip-content="<div class=\'col-lg-12\'>';
 		$textForBlind	= '';
-		if ($this->IsPhalanx || $SpyTech >= 4 || $Owner)
-		{
+
+
+		if ($this->IsPhalanx || $SpyTech >= 4 || $Owner){
 			
 			if($SpyTech < 8 && !$Owner)
 			{
-				$FleetPopup		.= '<tr><td style=\'width:100%;color:white\'>'.$LNG['cff_aproaching'].$fleetRow['fleet_amount'].$LNG['cff_ships'].':</td></tr>';
+				$FleetPopup		.= '<div class=\'row\'>'.$LNG['cff_aproaching'].$fleetRow['fleet_amount'].$LNG['cff_ships'].':</div>';
 				$textForBlind	= $LNG['cff_aproaching'].$fleetRow['fleet_amount'].$LNG['cff_ships'].': ';
 			}
 			$shipsData	= array();
@@ -295,32 +296,41 @@ class FlyingFleetsTable
 				$Ship    = explode(',', $Group);
 				if($Owner)
                 {
-					$FleetPopup 	.= '<tr><td style=\'width:50%;color:white\'>'.$LNG['tech'][$Ship[0]].':</td><td style=\'width:50%;color:white\'>'.pretty_number($Ship[1]).'</td></tr>';
+					$FleetPopup 	.= '<div class=\'row\'>
+                                            <div class=\'col-lg-9\'>'.$LNG['tech'][$Ship[0]].':</div>
+                                            <div class=\'col-lg-3\'>'.pretty_number($Ship[1]).'</div>
+                                        </div>';
                     $shipsData[]	= floatToString($Ship[1]).' '.$LNG['tech'][$Ship[0]];
 				}
                 else
                 {
 					if($SpyTech >= 8)
 					{
-						$FleetPopup 	.= '<tr><td style=\'width:50%;color:white\'>'.$LNG['tech'][$Ship[0]].':</td><td style=\'width:50%;color:white\'>'.pretty_number($Ship[1]).'</td></tr>';
+                        $FleetPopup 	.= '<div class=\'row\'>
+                                                <div class=\'col-lg-9\'>'.$LNG['tech'][$Ship[0]].':</div>
+                                                <div class=\'col-lg-3\'>'.pretty_number($Ship[1]).'</div>
+                                            </div>';
 						$shipsData[]	= floatToString($Ship[1]).' '.$LNG['tech'][$Ship[0]];
 					}
 					else
 					{
-						$FleetPopup		.= '<tr><td style=\'width:100%;color:white\'>'.$LNG['tech'][$Ship[0]].'</td></tr>';
+                        $FleetPopup 	.= '<div class=\'row\'>
+                                                <div class=\'col-lg-12\'>'.$LNG['tech'][$Ship[0]].'</div>
+                                            </div>';
 						$shipsData[]	= $LNG['tech'][$Ship[0]];
 					}
 				}
 			}
 			$textForBlind	.= implode('; ', $shipsData);
-		}
-        else
-        {
-			$FleetPopup 	.= '<tr><td style=\'width:100%;color:white\'>'.$LNG['cff_no_fleet_data'].'</span></td></tr>';
+		}else{
+			$FleetPopup 	.= '<div>
+                                    <div class=\'col-lg-12\'>'.$LNG['cff_no_fleet_data'].'</div>
+                                </div>';
 			$textForBlind	= $LNG['cff_no_fleet_data'];
 		}
-		
-		$FleetPopup  .= '</table>" class="tooltip '. $FleetType .'">'. $Text .'</a><span class="textForBlind"> ('.$textForBlind.')</span>';
+
+
+		$FleetPopup  .= '</div>" class="tooltip '. $FleetType .'">'. $Text .'</a></div><span class="textForBlind"> ('.$textForBlind.')</span>';
 
 		return $FleetPopup;
 	}	
