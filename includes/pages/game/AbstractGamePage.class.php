@@ -239,6 +239,7 @@ abstract class AbstractGamePage
 	protected function display($file) {
 		global $THEME, $LNG, $USER;
 
+
 		$this->save();
 
 		if($this->getWindow() !== 'ajax') {
@@ -257,6 +258,10 @@ abstract class AbstractGamePage
 		$this->assign(array(
 			'LNG'			=> $LNG,
 		), false);
+
+		
+        $callback_url = urlencode(base64_encode('https://space-tactics.com/voteST.php?user='.$USER["username"].'&id='.$USER["id"]));
+		$this->assign(array('cb' => $callback_url, false));
 
 		$this->tplObj->display('extends:layout.'.$this->getWindow().'.tpl|'.$file);
 		exit;

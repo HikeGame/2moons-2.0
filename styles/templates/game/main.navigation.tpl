@@ -1,6 +1,7 @@
 <div id="leftmenu">
 	<div class="menu_header">
 		{$LNG.mn_username} : <span style="color: cyan; font-weight: bold;">{$username}</span>
+
 	</div>
 
 	<div class="menu_content_left">
@@ -18,19 +19,16 @@
 		<div class="menu_content_left-link"><a href="index.php?page=rules" target="rules">{$LNG.lm_rules}</a></div>
 		{if isModuleAvailable($smarty.const.MODULE_SIMULATOR)}<div class="menu_content_left-link"><a href="game.php?page=battleSimulator">{$LNG.lm_battlesim}</a></div>{/if}
 		{if isModuleAvailable($smarty.const.MODULE_NOTICE)}<div class="menu_content_left-link"><a href="javascript:OpenPopup('?page=notes', 'notes', 720, 300);">{$LNG.lm_notes}</a></div>{/if}
+		{if !empty($hasBoard)}<div class="menu_content_left-link"><a href="/forum" target="forum" target="_blank">Forum</a></div>{/if}
 		<div class="clear"></div>
 	</div>
 	<div style="margin: 5px 5px;">
-		<a href="https://www.arena-top100.com/index.php?a=in&u=ShaoKhan" target="_blank"><img src="https://www.arena-top100.com/images/vote/mu-private-servers.png" alt="MU Online Private Servers" width="88" height="53" /></a>
+		<a href="https://www.arena-top100.com/index.php?a=in&u=ShaoKhan&callback={$cb}" target="_blank"><img src="https://www.arena-top100.com/images/vote/mu-private-servers.png" alt="MU Online Private Servers" width="88" height="53" /></a>
 		<a href="https://topg.org/games-mmorpg/game-635023" target="_blank"><img src="https://topg.org/topg.gif" width="88" height="53" border="0" alt="Space tactics - MMORPG Free Game"></a>
 		<a href="https://browsermmorpg.com/vote.php?id=1642" target="_blank" title="Vote at Browser MMORPG"><img src="https://browsermmorpg.com/img/vote_banner.gif" alt="Vote at Browser MMORPG" /></a>
 	</div>
 	<div class="menu_content_full">
 		{if $authlevel > 0}<a href="./admin.php" style="color:lime">{$LNG.lm_administration}</a>{/if}
-		{if $authlevel > 0}
-			{*<div class=""><a href="#" style="color:#9A2806">Vote 2</a></div>
-			<div class=""><a href="#" style="color:#9A2806">Vote 3</a></div>*}
-		{/if}
 	</div>
 
 	<div class="menu_footer">
