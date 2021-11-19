@@ -292,4 +292,24 @@ class GalaxyRows
 			'phalanx'		=> isModuleAvailable(MODULE_PHALANX) && ShowPhalanxPage::allowPhalanx($this->galaxyRow['galaxy'], $this->galaxyRow['system']),
 		);
 	}
+
+	public function getSectorData($system, $galaxy) : array{
+
+        $SectorResult = [];
+
+        for ($x=1; $x<=$galaxy; $x++){
+            for ($y=1; $y<=$system; $y++){
+                $sql = "SELECT  COUNT(p.id) anz FROM `uni1_planets` p WHERE p.galaxy = :galaxy AND p.system = :system";
+
+                $SectorResult[$x][$y] = Database::get()->select($sql, array(
+                    ':galaxy' 	=> $x,
+                    ':system' => $y,
+                ));
+
+            }
+        }
+
+	    return $SectorResult;
+    }
+
 }

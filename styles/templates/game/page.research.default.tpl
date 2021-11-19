@@ -10,7 +10,7 @@
                 {/if}
             </div>
             {if !empty($Queue)}
-                <div class="col-lg-12">
+                <div class="col-lg-12 buildings_headline">
                     {foreach $Queue as $List}
                         <div class="row research-item">
                             {$ID = $List.element}
@@ -33,21 +33,19 @@
                             </div>
 
                             {if $List@first}
-                                <div class="col-lg-6" id="progressbar" data-time="{$List.resttime}"></div>
-                                <div class="col-lg-2 left" id="time" data-time="{$List.time}"></div>
-                                <div class="col-lg-1 left">
+                                <div class="col-lg-7" id="progressbar" data-time="{$List.resttime}"></div>
+                                <div class="col-lg-3 left">
+                                    <span class="col-lg-2 left" id="time" data-time="{$List.time}"></span>
                                     <form action="game.php?page=research" method="post" class="build_form">
                                         <input type="hidden" name="cmd" value="cancel">
                                         <button type="submit" class="build_submit onlist">{$LNG.bd_cancel}</button>
                                     </form>
                                 </div>
                             {else}
-                                <div class="col-lg-6"></div>
-                                <div class="col-lg-2 left">
-                                        <span style="color:lime" data-time="{$List.endtime}"
-                                              class="timer">{$List.display}</span>
-                                </div>
-                                <div class="col-lg-1 left">
+                                <div class="col-lg-7"></div>
+                                <div class="col-lg-3 left">
+                                    <span style="color:lime" data-time="{$List.endtime}"
+                                          class="timer">{$List.display}</span>
                                     <form action="game.php?page=research" method="post" class="build_form">
                                         <input type="hidden" name="cmd" value="remove">
                                         <input type="hidden" name="listid" value="{$List@iteration}">

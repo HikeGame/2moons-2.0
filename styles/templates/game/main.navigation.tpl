@@ -14,6 +14,9 @@
 		{if isModuleAvailable($smarty.const.MODULE_TRADER)}<div class="menu_content_left-link"><a href="game.php?page=fleetTable">{$LNG.lm_fleet}</a></div>{/if}
 		{if isModuleAvailable($smarty.const.MODULE_RESSOURCE_LIST)}<div class="menu_content_left-link"><a href="game.php?page=resources">{$LNG.lm_resources}</a></div>{/if}
 		{if isModuleAvailable($smarty.const.MODULE_GALAXY)}<div class="menu_content_left-link"><a href="game.php?page=galaxy">{$LNG.lm_galaxy}</a></div>{/if}
+		{if $authlevel > 0}
+			<div class="menu_content_left-link"><a href="game.php?page=galaxynew">{$LNG.lm_galaxy}-new</a></div>
+		{/if}
 		{if isModuleAvailable($smarty.const.MODULE_ALLIANCE)}<div class="menu_content_left-link"><a href="game.php?page=alliance">{$LNG.lm_alliance}</a></div>{/if}
 		{if isModuleAvailable($smarty.const.MODULE_SUPPORT)}<div class="menu_content_left-link"><a href="game.php?page=ticket">{$LNG.lm_support}</a></div>{/if}
 		<div class="menu_content_left-link"><a href="index.php?page=rules" target="rules">{$LNG.lm_rules}</a></div>
@@ -23,7 +26,9 @@
 		<div class="clear"></div>
 	</div>
 	<div style="margin: 5px 5px;">
-		<a href="https://www.arena-top100.com/index.php?a=in&u=ShaoKhan&callback={$cb}" target="_blank"><img src="https://www.arena-top100.com/images/vote/mu-private-servers.png" alt="MU Online Private Servers" width="88" height="53" /></a>
+		{*<a href="https://www.arena-top100.com/index.php?a=in&u=ShaoKhan&callback={$cb}" target="_blank"><img src="https://www.arena-top100.com/images/vote/mu-private-servers.png" alt="MU Online Private Servers" width="88" height="53" /></a>*}
+		<a href="https://www.arena-top100.com/index.php?a=in&u=ShaoKhan&id{$uid}" target="_blank"><img src="https://www.arena-top100.com/images/vote/mu-private-servers.png" alt="MU Online Private Servers" width="88" height="53" /></a>
+			     {*https://www.arena-top100.com/index.php?a=in&u=SERVER_ID&id=VOTER_USERNAME_OR_ID*}
 		<a href="https://topg.org/games-mmorpg/game-635023" target="_blank"><img src="https://topg.org/topg.gif" width="88" height="53" border="0" alt="Space tactics - MMORPG Free Game"></a>
 		<a href="https://browsermmorpg.com/vote.php?id=1642" target="_blank" title="Vote at Browser MMORPG"><img src="https://browsermmorpg.com/img/vote_banner.gif" alt="Vote at Browser MMORPG" /></a>
 	</div>

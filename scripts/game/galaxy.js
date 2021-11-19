@@ -23,3 +23,33 @@ function galaxy_submit(value) {
 	$('#auto').attr('name', value);
 	$('#galaxy_form').submit();
 }
+
+
+$( document ).ready(function() {
+
+	$('.system-container .system').mouseenter(function(event){
+		let data = $(this).attr('id');
+		let system = data.split('-');
+		let x = system[0];
+		let y = system[1];
+
+		console.info(x,y);
+
+
+		$.ajax({
+			method: "POST",
+			url: "getSystem.php",
+			data: { x: x, y: y }
+		})
+			.done(function( msg ) {
+				console.info("Data Saved: " + msg );
+			});
+	});
+
+});
+
+
+
+
+
+

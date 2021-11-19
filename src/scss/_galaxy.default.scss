@@ -1,0 +1,70 @@
+.system-container {
+  width: 100%;
+  padding: 20px 0;
+
+  .row {
+    --bs-gutter-x: 0;
+    margin: 0 auto 0 60px;
+  }
+}
+
+.system {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background: #06130b;
+  padding: 0;
+  border: 1px solid #0b2113;
+
+  &.anz-1{
+    background-image: url("../../../theme/gow/images/systems/1.jpg");
+  }
+  &.anz-2{
+    background-image: url("../../../theme/gow/images/systems/2.jpg");
+  }
+  &.anz-3{
+    background-image: url("../../../theme/gow/images/systems/3.jpg");
+  }
+  &.anz-4{
+    background-image: url("../../../theme/gow/images/systems/4.jpg");
+  }
+  &.anz-5{
+    background-image: url("../../../theme/gow/images/systems/5.jpg");
+  }
+  &.anz-6{
+    background-image: url("../../../theme/gow/images/systems/6.jpg");
+  }
+  &.anz-7{
+    background-image: url("../../../theme/gow/images/systems/7.jpg");
+  }
+  &.anz-8{
+    background-image: url("../../../theme/gow/images/systems/7.jpg");
+  }
+  &.anz-9{
+    background-image: url("../../../theme/gow/images/systems/7.jpg");
+  }
+  &.anz-10{
+    background-image: url("../../../theme/gow/images/systems/7.jpg");
+  }
+  &.anz-11{
+    background-image: url("../../../theme/gow/images/systems/8.jpg");
+  }
+  &.anz-12{
+    background-image: url("../../../theme/gow/images/systems/8.jpg");
+  }
+  &.anz-13{
+    background-image: url("../../../theme/gow/images/systems/8.jpg");
+  }
+  &.anz-14{
+    background-image: url("../../../theme/gow/images/systems/13.jpg");
+  }
+  &.anz-15{
+    background-image: url("../../../theme/gow/images/systems/13.jpg");
+  }
+  &.anz-16{
+    background-image: url("../../../theme/gow/images/systems/13.jpg");
+  }
+
+
+
+}

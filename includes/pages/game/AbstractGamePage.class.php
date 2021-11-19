@@ -260,8 +260,8 @@ abstract class AbstractGamePage
 		), false);
 
 		
-        $callback_url = urlencode(base64_encode('https://space-tactics.com/voteST.php?user='.$USER["username"].'&id='.$USER["id"]));
-		$this->assign(array('cb' => $callback_url, false));
+        #$callback_url = urlencode(base64_encode('https://space-tactics.com/voteST.php?user='.$USER["username"].'&id='.$USER["id"]));
+		$this->assign(array('uid' => $USER["id"], false));
 
 		$this->tplObj->display('extends:layout.'.$this->getWindow().'.tpl|'.$file);
 		exit;
