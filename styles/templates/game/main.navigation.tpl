@@ -5,6 +5,9 @@
 	</div>
 
 	<div class="menu_content_left">
+		{if $authlevel > 0}
+			<div class="menu_content_left-link"><a href="game.php?page=overviews">Home</a></div>
+		{/if}
 		{if isModuleAvailable($smarty.const.MODULE_BUILDING)}<div class="menu_content_left-link"><a href="game.php?page=buildings">{$LNG.lm_buildings}</a></div>{/if}
 		{if isModuleAvailable($smarty.const.MODULE_RESEARCH)}<div class="menu_content_left-link"><a href="game.php?page=research">{$LNG.lm_research}</a></div>{/if}
 		{if isModuleAvailable($smarty.const.MODULE_SHIPYARD_FLEET)}<div class="menu_content_left-link"><a href="game.php?page=shipyard&amp;mode=fleet">{$LNG.lm_shipshard}</a></div>{/if}

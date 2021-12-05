@@ -41,13 +41,8 @@
             </div>
         </div>*}
 
-        <div>
-            <table style="width: 100%;">
-                {if $authlevel >= 3}
+        <div class="col-lg-12">
 
-
-
-                {/if}
 
 
                 {foreach $fleets as $index => $fleet}
@@ -58,7 +53,7 @@
                         <td colspan="2" class="fleet_slot">{$fleet.text}</td>
                     </tr>
                 {/foreach}
-            </table>
+
         </div>
 
         <div>

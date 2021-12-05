@@ -137,12 +137,11 @@ select {
 }
 
 #planetSelectorWrapper {
-	width:145px;
+	width:auto;
 }
 
 #planetSelector {
-	margin: 4px 0px;
-	width:145px;
+	margin: 4px 0;
 }
 
 /* Resources */

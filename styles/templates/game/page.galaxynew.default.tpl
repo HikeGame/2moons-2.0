@@ -3,6 +3,7 @@
     <div class="col-lg-12 content_page">
         <div class="row">
             <div><h2 class="buildings_headline">{$LNG.lm_galaxy}</h2></div>
+            <span class="text-center">{$LNG.starsysteminfo}</span>
         </div>
     </div>
     <div class="col-lg-12 content_page system-container">
@@ -11,7 +12,7 @@
         {for $x=1 to {$size_y} }
             <div class="row">
             {for $y=1 to {$size_x} }
-                <div class="system system_{$x}-{$y} anz-{$sector[{$x}][{$y}][0]['anz']}" id="{$x}-{$y}"></div>
+                <div class="system system_{$x}-{$y} anz-{$sector[{$x}][{$y}][0]['anz']}" id="{$x}-{$y}" ></div>
                 {if $y eq 99}</div>{/if}
             {/for}
         {/for}

@@ -32,9 +32,10 @@ $( document ).ready(function() {
 		let system = data.split('-');
 		let x = system[0];
 		let y = system[1];
+		let val = "";
 
-		console.info(x,y);
 
+		//console.info(x,y);
 
 		$.ajax({
 			method: "POST",
@@ -42,9 +43,19 @@ $( document ).ready(function() {
 			data: { x: x, y: y }
 		})
 			.done(function( msg ) {
-				console.info("Data Saved: " + msg );
+				if(msg.length > 0) {
+					$('.systemdata').remove();
+					$('.system_' + x + '-' + y).append(msg);
+				}else{
+					$('.systemdata').remove();
+				}
 			});
 	});
+
+	/*$('.system-container .system').mouseleave(function(){
+		let s = $(this).attr('id');
+		$('[class*="systemdata_"]').remove();
+	});*/
 
 });
 

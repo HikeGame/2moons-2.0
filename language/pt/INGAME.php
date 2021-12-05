@@ -1173,6 +1173,9 @@ $LNG['lo_notify']							= 'Serás redirecionado em <span id="seconds">5</span> s
 $LNG['lo_continue']							= 'Clica aqui para não esperar';
 
 //----------------------------------------------------------------------------//
-
-
 // Translated into Portuguese by QwataKayean . All rights reversed (C) 2012
+
+/* more translations by ShaoKhan from Space-Tactics.com */
+
+$LNG['perHour'] = "por hora";
+$LNG["starsysteminfo"] = "A página carrega um pouco mais devido aos vários sistemas e informações. Dê a ela algum tempo.";

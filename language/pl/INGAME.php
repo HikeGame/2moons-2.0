@@ -1183,6 +1183,8 @@ $LNG['lo_redirect']						= 'Przekierowuje';
 $LNG['lo_notify']						= 'Zostaniesz przeniesiony za <span id="seconds"> 5 </span> s';
 $LNG['lo_continue']						= 'Kliknij tutaj, jeśli nie chcesz zostać przniesiony';
 //----------------------------------------------------------------------------//
-
-
 // Translated into Polish by Sirgomo . All rights reversed (C) 2012
+
+/* more translateions by ShaoKhan from Space-Tactics.com */
+$LNG['perHour'] = "na godzinę";
+$LNG["starsysteminfo"] = "Strona ładuje się trochę dłużej ze względu na wiele systemów i informacji. Daj jej trochę czasu.";

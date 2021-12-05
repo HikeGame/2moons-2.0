@@ -1119,3 +1119,7 @@ $LNG['lo_logout']                         = 'Сессия завершена.';
 $LNG['lo_redirect']                       = 'Перенаправление';
 $LNG['lo_notify']                         = 'Вы будете перенаправлены через <span id="seconds">5</span> секунд';
 $LNG['lo_continue']                       = 'Нажмите здесь, если не хотите ждать';
+
+/* more translations by ShaoKhan from Space-Tactics.com */
+$LNG['perHour'] = "в час";
+$LNG["starsysteminfo"] = "Страница загружается немного дольше из-за множества систем и информации. Дай ей немного времени.";

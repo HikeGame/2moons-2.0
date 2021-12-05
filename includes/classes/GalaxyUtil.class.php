@@ -1,21 +1,22 @@
 <?php
 
 /**
- *  2Moons
- *   by Jan-Otto Kröpke 2009-2016
+ *  Space-Tactics
+ *   by ShaoKhan 2021-2021
  *
  * For the full copyright and license information, please view the LICENSE
  *
- * @package 2Moons
- * @author Jan-Otto Kröpke <slaver7@gmail.com>
+ * @package Space-Tactics
+ * @author ShaoKhan <support@space-tactics.com>
  * @copyright 2009 Lucky
  * @copyright 2016 Jan-Otto Kröpke <slaver7@gmail.com>
+ * @copyright 2021 ShaoKhan <support@space-tactics.com>
  * @licence MIT
  * @version 1.8.0
- * @link https://github.com/jkroepke/2Moons
+ * @link https://github.com/ShaoKhan/2moons-2.0
  */
 
-class PlanetUtil
+class GalaxyUtil
 {
 
     public function __construct()
@@ -23,9 +24,15 @@ class PlanetUtil
         $this->db = Database::get();
     }
 
-    public function getPlanetCount()
+    public function getSystemInfo($x, $y)
     {
-        $this->db->select();
+
+        $res = $this->db->select('SELECT p.name, p.id_owner, pl.username, pl.ally_id FROM ' . Universe::current().' WHERE x= :x  AND y= :y AND universe = :universe',
+                                 array(
+                                     ':galaxy'   => $x,
+                                     ':system'   => $y,
+                                     ':universe' => Universe::current(),
+                                 ));
     }
 
 }

@@ -1163,4 +1163,5 @@ $LNG['lo_continue']							= 'Pulsa aquí si no redirecciona tu navegador.';
 
 
 // Translated into Spanish by Angelus_ira . All rights reversed (C) 2011
-
+$LNG['perHour'] = "por hora";
+$LNG["starsysteminfo"] = "La página se carga un poco más debido a la gran cantidad de sistemas e información. Dale algo de tiempo.";

@@ -90,24 +90,26 @@
 		<input type="hidden" name="target_mission" value="{$targetMission}">
 			<table style="width: 100%; max-width: 100%;">
 				<tr class="title">
-					<th colspan="4">{$LNG.fl_new_mission_title}</th>
+					<th colspan="5">{$LNG.fl_new_mission_title}</th>
 				</tr>
 				<tr style="height:20px;">
 					<td>{$LNG.fl_ship_type}</td>
 					<td>{$LNG.fl_ship_available}</td>
-					<td>-</td>
-					<td>-</td>
+					<td>{$LNG.fl_fleet_speed}</td>
+					<td></td>
 				</tr>
 				{foreach $FleetsOnPlanet as $FleetRow}
 				<tr style="height:20px;">
 					<td>{if $FleetRow.speed != 0} <a title="{$LNG.fl_speed_title} {$FleetRow.speed}">{$LNG.tech.{$FleetRow.id}}</a>{else}{$LNG.tech.{$FleetRow.id}}{/if}</td>
 					<td id="ship{$FleetRow.id}_value">{$FleetRow.count|number}</td>
+					<td>
+						{$FleetRow.speed|number_format:0:",":"."}
+					</td>
 					{if $FleetRow.speed != 0}
 					<td><a href="javascript:maxShip('ship{$FleetRow.id}');">{$LNG.fl_max}</a></td>
 					<td><input name="ship{$FleetRow.id}" id="ship{$FleetRow.id}_input" size="10" value="0"></td>
 					{else}
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
+					<td></td>
 					{/if}
 				</tr>
 				{/foreach}

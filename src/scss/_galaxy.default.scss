@@ -14,7 +14,8 @@
   height: 15px;
   background: #06130b;
   padding: 0;
-  border: 1px solid #0b2113;
+  border: 1px solid #07170d;
+  /*border: 1px solid #0b2113;*/
 
   &.anz-1{
     background-image: url("../../../theme/gow/images/systems/1.jpg");
@@ -39,32 +40,59 @@
   }
   &.anz-8{
     background-image: url("../../../theme/gow/images/systems/7.jpg");
-  }
+   }
   &.anz-9{
     background-image: url("../../../theme/gow/images/systems/7.jpg");
-  }
+   }
   &.anz-10{
     background-image: url("../../../theme/gow/images/systems/7.jpg");
-  }
+   }
   &.anz-11{
     background-image: url("../../../theme/gow/images/systems/8.jpg");
-  }
+   }
   &.anz-12{
     background-image: url("../../../theme/gow/images/systems/8.jpg");
-  }
+   }
   &.anz-13{
     background-image: url("../../../theme/gow/images/systems/8.jpg");
-  }
+   }
   &.anz-14{
     background-image: url("../../../theme/gow/images/systems/13.jpg");
-  }
+   }
   &.anz-15{
     background-image: url("../../../theme/gow/images/systems/13.jpg");
-  }
+   }
   &.anz-16{
     background-image: url("../../../theme/gow/images/systems/13.jpg");
   }
+}
 
+.systemdata{
+  background-image: url("../../../theme/gow/images/systems/system-data-background.jpg");
+  background-size: cover;
+  color: #FFF;
+  position: relative;
+  width: 30rem;
+  height: 20rem;
+  border: 1px solid #000;
+  -webkit-box-shadow: 0px 0px 15px 3px #000000;
+  box-shadow: 0px 0px 15px 3px #000000;
+  z-index: 999;
+  filter:     Alpha(opacity=100);
+  opacity:    1;
+  moz-opacity:    1;
+  padding: 15px;
+  top: 15px;
+  left: 30px;
+  font-size: .8em;
 
+  .row{
+    margin:0;
+
+    &.systemdata-headline{
+      margin: 0 0 10px 0;
+    }
+
+  }
 
 }

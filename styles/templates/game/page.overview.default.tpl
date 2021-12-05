@@ -41,8 +41,8 @@
             </div>
         </div>*}
 
-        <div>
-            <table style="width: 100%;">
+        <div class="" style="position: relative;">
+            <table style="">
                 {if $authlevel >= 3}
 
 
@@ -52,7 +52,8 @@
 
                 {foreach $fleets as $index => $fleet}
                     <tr>
-                        <td id="fleettime_{$index}" class="fleets" data-fleet-end-time="{$fleet.returntime}" data-fleet-time="{$fleet.resttime}">
+                        <td id="fleettime_{$index}" class="fleets" data-fleet-end-time="{$fleet.returntime}"
+                            data-fleet-time="{$fleet.resttime}">
                             {pretty_fly_time({$fleet.resttime})}
                         </td>
                         <td colspan="2" class="fleet_slot">{$fleet.text}</td>
@@ -61,7 +62,7 @@
             </table>
         </div>
 
-        <div>
+        <div class="" style="">
             <div id="contentPlanet"
                  style="background: url({$dpath}planeten/{$planetimage}.jpg) no-repeat; background-size: cover; margin-top: 10px;">
 
@@ -154,8 +155,10 @@
                     <table style="width: 100%;">
                         {foreach $RefLinks as $RefID => $RefLink}
                             <tr>
-                                <td colspan="2"><a href="#"
-                                                   onclick="return Dialog.Playercard({$RefID}, '{$RefLink.username}');">{$RefLink.username}</a>
+                                <td colspan="2">
+                                    <a href="#" onclick="return Dialog.Playercard({$RefID}, '{$RefLink.username}');">
+                                        {$RefLink.username}
+                                    </a>
                                 </td>
                                 <td>{{$RefLink.points|number}} / {$ref_minpoints|number}</td>
                             </tr>
@@ -172,4 +175,43 @@
 {/block}
 {block name="script" append}
     <script src="scripts/game/overview.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('.ttip').mouseover(function () {
+
+                let id = $(this).attr('id');
+                let text = $(this).data('tooltip-content');
+
+                $('.' + id).remove();
+
+                $('#' + id).append('<div class="' + id + '">' + text + '</div>');
+
+                $('.' + id).css({
+                    'background': '#000000',
+                    'color': '#FFF',
+                    'position': 'absolute',
+                    'width': '30rem',
+                    'height': '20rem',
+                    'border': '1px solid #000',
+                    '-webkit-box-shadow': '0px 0px 15px 3px #000000',
+                    'box-shadow': '0px 0px 15px 3px #000000',
+                    'z-index': '999',
+                    'filter': 'Alpha(opacity=100)',
+                    'opacity': '1',
+                    'moz-opacity': '1',
+                    'padding': '15px',
+                    'top': '15px',
+                    'left': '30px',
+                    'font-size': '1.2em',
+                })
+            });
+
+            $('.ttip').mouseout(function () {
+                let id = $(this).attr('id');
+                $('.'+id).remove();
+            });
+
+        });
+    </script>
 {/block}

@@ -15,7 +15,7 @@
  * @link https://github.com/jkroepke/2Moons
  */
 
-class ShowOverviewPage extends AbstractGamePage
+class ShowOverviewsPage extends AbstractGamePage
 {
 	public static $requireModule = 0;
 

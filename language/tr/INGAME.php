@@ -1184,3 +1184,6 @@ $LNG['lo_continue']							= 'Beklemek istemiyorsaniz tiklayiniz';
 
 //----------------------------------------------------------------------------//
 
+/* more translations by ShaoKhan from Space-Tactics.com */
+$LNG['perHour'] = "saat başı";
+$LNG["starsysteminfo"] = "Birçok sistem ve bilgi nedeniyle sayfa biraz daha uzun yükleniyor. Ona biraz zaman ver.";

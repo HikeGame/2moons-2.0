@@ -1178,3 +1178,4 @@ $LNG['lo_continue'] = 'Click here not to wait';
 // Translations by ShaoKhan. All rights reserved (C) 2021
 
 $LNG['perHour'] = "per Hour";
+$LNG["starsysteminfo"] = "The page loads a little longer because of the many systems and information. Give it some time";
