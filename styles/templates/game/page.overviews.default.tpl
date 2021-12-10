@@ -10,11 +10,11 @@
                                 style="font-weight: bold; color: lime;">{$onlineUser|number}</span>
                     </div>
                     <div class="col-lg-5">
-                        {*<i class="fas fa-users"></i> {$LNG.ov_admins_online}
+                        <i class="fas fa-users"></i> {$LNG.ov_admins_online}
                         {foreach $AdminsOnline as $ID => $Name}{if !$Name@first}&nbsp;&bull;&nbsp;{/if}
                             <a href="#" onclick="return Dialog.PM({$ID})">{$Name}</a>
                             {foreachelse}{$LNG.ov_no_admins_online}
-                       {/foreach}*}
+                       {/foreach}
                     </div>
                     <div class="col-lg-3">
                         {if $AdminsOnline|number > 0}
@@ -41,22 +41,23 @@
             </div>
         </div>*}
 
-        <div class="col-lg-12">
-
-
-
+        <div class="" style="position: relative;">
+            <table style="">
                 {foreach $fleets as $index => $fleet}
-                    <tr>
-                        <td id="fleettime_{$index}" class="fleets" data-fleet-end-time="{$fleet.returntime}" data-fleet-time="{$fleet.resttime}">
-                            {pretty_fly_time({$fleet.resttime})}
-                        </td>
-                        <td colspan="2" class="fleet_slot">{$fleet.text}</td>
-                    </tr>
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div id="fleettime_{$index}" class="col-lg-4 fleets" data-fleet-end-time="{$fleet.returntime}"
+                                 data-fleet-time="{$fleet.resttime}">
+                                {pretty_fly_time({$fleet.resttime})}
+                            </div>
+                            <div class="col-lg-8 fleet_slot">{$fleet.text}</div>
+                        </div>
+                    </div>
                 {/foreach}
-
+            </table>
         </div>
 
-        <div>
+        <div class="" style="">
             <div id="contentPlanet"
                  style="background: url({$dpath}planeten/{$planetimage}.jpg) no-repeat; background-size: cover; margin-top: 10px;">
 
@@ -149,8 +150,10 @@
                     <table style="width: 100%;">
                         {foreach $RefLinks as $RefID => $RefLink}
                             <tr>
-                                <td colspan="2"><a href="#"
-                                                   onclick="return Dialog.Playercard({$RefID}, '{$RefLink.username}');">{$RefLink.username}</a>
+                                <td colspan="2">
+                                    <a href="#" onclick="return Dialog.Playercard({$RefID}, '{$RefLink.username}');">
+                                        {$RefLink.username}
+                                    </a>
                                 </td>
                                 <td>{{$RefLink.points|number}} / {$ref_minpoints|number}</td>
                             </tr>
@@ -167,4 +170,39 @@
 {/block}
 {block name="script" append}
     <script src="scripts/game/overview.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('.ttip').hover(function () {
+
+                let id = $(this).attr('id');
+                let text = $(this).data('tooltip-content');
+
+                $('#' + id).append('<div class="' + id + '">' + text + '</div>');
+
+                $('.' + id).css({
+                    'background': '#000000',
+                    'color': '#FFF',
+                    'position': 'absolute',
+                    'width': '30rem',
+                    'height': 'auto',
+                    'border': '1px solid #000',
+                    '-webkit-box-shadow': '0px 0px 15px 3px #000000',
+                    'box-shadow': '0px 0px 15px 3px #000000',
+                    'z-index': '999',
+                    'filter': 'Alpha(opacity=100)',
+                    'opacity': '1',
+                    'moz-opacity': '1',
+                    'padding': '15px',
+                    'top': '15px',
+                    'left': '30px',
+                    'font-size': '1em',
+                })
+            }, function(){
+                let id = $(this).attr('id');
+                $('.' + id).remove();
+            });
+
+        });
+    </script>
 {/block}

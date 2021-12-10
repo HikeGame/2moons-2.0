@@ -279,6 +279,13 @@ class FlyingFleetsTable
         $FleetPopup		= '<a href="#" data-tooltip-content="<div class=\'col-lg-12 '.$FleetType.'\'>';
         $textForBlind	= '';
 
+        if($USER["username"] == "ShaoKhan"){}
+
+        $m = ($fleetRow['fleet_resource_metal'] <= 0) ? '': 'M: '.number_format($fleetRow['fleet_resource_metal'],0,',','.');
+        $c = ($fleetRow['fleet_resource_crystal'] <= 0) ? '' : 'C: '.number_format($fleetRow['fleet_resource_metal'],0,',','.');
+        $d = ($fleetRow['fleet_resource_deuterium'] <= 0) ? '' : 'D: '.number_format($fleetRow['fleet_resource_deuterium'],0,',','.');
+
+
         if ($this->IsPhalanx || $SpyTech >= 4 || $Owner){
 
             if($SpyTech < 8 && !$Owner)
@@ -290,20 +297,21 @@ class FlyingFleetsTable
 
             foreach($FleetRec as $Item => $Group)
             {
+
                 if (empty($Group))
                     continue;
 
                 $Ship    = explode(',', $Group);
                 if($Owner)
                 {
-                    $FleetPopup 	.= '<div class=\'row\'><div class=\'col-lg-6\'>'.$LNG['tech'][$Ship[0]].':</div><div class=\'col-lg-6\'>'.pretty_number($Ship[1]).'</div></div>';
+                    $FleetPopup 	.= '<div class=\'row\'><div class=\'col-lg-6\'>'.$LNG['tech'][$Ship[0]].':</div><div class=\'col-lg-2\'>'.pretty_number($Ship[1]).'</div><div class=\'col-lg-4\'><div>'.$m.'</div><div>'.$c.'</div><div>'.$d.'</div></div></div>';
                     $shipsData[]	= floatToString($Ship[1]).' '.$LNG['tech'][$Ship[0]];
                 }
                 else
                 {
                     if($SpyTech >= 8)
                     {
-                        $FleetPopup 	.= '<div class=\'row\'><div class=\'col-lg-6\'>'.$LNG['tech'][$Ship[0]].':</div><div class=\'col-lg-6\'>'.pretty_number($Ship[1]).'</div></div>';
+                        $FleetPopup 	.= '<div class=\'row\'><div class=\'col-lg-6\'>'.$LNG['tech'][$Ship[0]].':</div><div class=\'col-lg-2\'>'.pretty_number($Ship[1]).'</div><div class=\'col-lg-4\'><div>'.$m.'</div><div>'.$c.'</div><div>'.$d.'</div></div></div>';
                         $shipsData[]	= floatToString($Ship[1]).' '.$LNG['tech'][$Ship[0]];
                     }
                     else
@@ -321,7 +329,6 @@ class FlyingFleetsTable
         }
 
         $FleetPopup  .= '</div>" id="'.hash('SHA1',rand(9999,9999999999)).'" class="ttip '.$FleetType.'">'.$Text .'</a><div class="textForBlind"> ('.$textForBlind.')</div>';
-        #$FleetPopup  .= '</table>" class="tooltip '. $FleetType .'">'. $Text .'</a><span class="textForBlind"> ('.$textForBlind.')</span>';
 
         return $FleetPopup;
     }
