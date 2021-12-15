@@ -1,6 +1,6 @@
 <?php
 /**
- *  2Moons 
+ *  2Moons
  *   by Jan-Otto Kröpke 2009-2016
  *
  * For the full copyright and license information, please view the LICENSE
@@ -426,6 +426,10 @@ $LNG['rs_sum']								= 'Total:';
 $LNG['rs_daily']							= 'Por dia:';
 $LNG['rs_weekly']							= 'Por Semana:';
 $LNG['rs_ress_bonus']						= 'Bonus(Oficial/Bonus-MO):';
+$LNG['rs_metal']                            = 'Metal';
+$LNG['rs_crystal']                          = 'Cristal';
+$LNG['rs_deuterium']                        = 'Deuterio';
+$LNG['rs_darkmatter']                       = 'Materia negra';
 
 //----------------------------------------------------------------------------//
 //OFFICIERS
@@ -747,7 +751,7 @@ $LNG['al_rank_name']						= 'Nombre';
 $LNG['al_rank_desc']['MEMBERLIST']			= 'Ver lista de miembros';
 $LNG['al_rank_desc']['ONLINESTATE']			= 'Ver el Estatus-Online';
 $LNG['al_rank_desc']['TRANSFER']			= 'Puede ser Lider';
-$LNG['al_rank_desc']['SEEAPPLY']			= 'Ver Aplicaciones'; 
+$LNG['al_rank_desc']['SEEAPPLY']			= 'Ver Aplicaciones';
 $LNG['al_rank_desc']['MANAGEAPPLY']			= 'Utilizar Aplicaciones';
 $LNG['al_rank_desc']['ROUNDMAIL']			= 'Correo Circular';
 $LNG['al_rank_desc']['ADMIN']				= 'Puede editar la Alianza';

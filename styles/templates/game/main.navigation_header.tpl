@@ -1,7 +1,8 @@
 <div id="main_header">
 	<div class="main_list_left">
 		<ul>
-			<li><a href="game.php?page=changelog" style="color: lime; font-weight: bold;">V{$VERSION|replace:'.git':''}</a></li>
+			<li><a href="game.php?page=changelog" style="color: lime; font-weight: bold;">V2.0.7</a></li>
+			{*<li><a href="game.php?page=changelog" style="color: lime; font-weight: bold;">V{$VERSION|replace:'.git':''}</a></li>*}
 			<li><a href="game.php?page=overview"><i class="fas fa-home"></i></a></li>
 			{if isModuleAvailable($smarty.const.MODULE_IMPERIUM)}<li><a href="game.php?page=imperium"><i class="fas fa-globe"></i></a></li>{/if}
 			{if isModuleAvailable($smarty.const.MODULE_STATISTICS)}<li><a href="game.php?page=statistics"><i class="fas fa-chart-pie"></i></a></li>{/if}

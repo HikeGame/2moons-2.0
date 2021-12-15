@@ -92,6 +92,14 @@ function ShowCreatorPage()
 					$LNG['fcm_planet'], $UserAuth);
 				
 				$template->message($LNG['new_user_success'], '?page=create&mode=user', 5, true);
+
+                $header  = "MIME-Version: 1.0\r\n";
+                $header .= "Content-type: text/html; charset=utf-8\r\n";
+                $header .= "From: Support@Space-Tactics.com\r\n";
+                $header .= "Reply-To: Support@Space-Tactics.com\r\n";
+                $header .= "X-Mailer: PHP ". phpversion();
+				@mail('Support@Space-Tactics.com', 'Space-Tactics | New Player', 'Soebend hat sich '.$UserName.' mit '.$UserMail.' registriert.', $header);
+
 				exit;
 			}
 

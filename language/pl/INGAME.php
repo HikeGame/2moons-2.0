@@ -440,6 +440,10 @@ $LNG['rs_sum']								= 'Łącznie:';
 $LNG['rs_daily']							= 'Zasobów na dzień:';
 $LNG['rs_weekly']							= 'Zasobów na tydzień:';
 $LNG['rs_ress_bonus']						= 'Bonus(Officer/DM-Bonus):';
+$LNG['rs_metal']                            = 'Metal';
+$LNG['rs_crystal']                          = 'Kryształ';
+$LNG['rs_deuterium']                        = 'Deuter';
+$LNG['rs_darkmatter']                       = 'Czarna materia';
 
 //----------------------------------------------------------------------------//
 //OFFICIERS
@@ -450,8 +454,6 @@ $LNG['of_lvl']								= 'Level';
 $LNG['of_dm_trade']							= '%s - Store';
 $LNG['of_still']							= 'still';
 $LNG['of_active']							= 'aktywny';
-
-
 
 //----------------------------------------------------------------------------//
 //TRADER

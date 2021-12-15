@@ -262,10 +262,11 @@ class FlyingFleetsTable
                 $FRessource  .= '<tr><td>'.$LNG['tech'][921].'</td><td style=\'width:50%;color:white\'>'. pretty_number($fleetRow['fleet_resource_darkmatter']).'</td></tr>';
             $FRessource  .= '</table>';
 
-            $MissionPopup  = '<a data-tooltip-content="'.$FRessource.'" class="tooltip '.$FleetType.'">'.$Texte.'</a><span class="textForBlind"> ('.$textForBlind.')</span>';
+            $MissionPopup  = '<span data-tooltip-content="'.$FRessource.'" class="'.$FleetType.' ' .lcfirst($Texte).'">'.$Texte.'</span><span class="textForBlind"> ('.$textForBlind.')</span>';
         }
-        else
-            $MissionPopup  = $Texte;
+        else{
+            $MissionPopup = $Texte;
+        }
 
         return $MissionPopup;
     }
@@ -279,12 +280,12 @@ class FlyingFleetsTable
         $FleetPopup		= '<a href="#" data-tooltip-content="<div class=\'col-lg-12 '.$FleetType.'\'>';
         $textForBlind	= '';
 
-        if($USER["username"] == "ShaoKhan"){}
+        $m = ($fleetRow['fleet_resource_metal'] <= 0) ? "": "<div class='row'><div class='col-lg-6'>".$LNG["rs_metal"].":</div><div class='col-lg-6'>".number_format($fleetRow['fleet_resource_metal'],0,',','.')."</div></div>";
+        $c = ($fleetRow['fleet_resource_crystal'] <= 0) ? "" : "<div class='row'><div class='col-lg-6'>".$LNG["rs_crystal"].":</div><div class='col-lg-6'>".number_format($fleetRow['fleet_resource_crystal'],0,',','.')."</div></div>";
+        $d = ($fleetRow['fleet_resource_deuterium'] <= 0) ? "" : "<div class='row'><div class='col-lg-6'>".$LNG["rs_deuterium"].":</div><div class='col-lg-6'>".number_format($fleetRow['fleet_resource_deuterium'],0,',','.')."</div></div>";
+        $dm = ($fleetRow['fleet_resource_darkmatter'] <= 0) ? "" : "<div class='row'><div class='col-lg-6'>".$LNG["rs_darkmatter"].":</div><div class='col-lg-6'>".number_format($fleetRow['fleet_resource_darkmatter'],0,',','.')."</div></div>";
 
-        $m = ($fleetRow['fleet_resource_metal'] <= 0) ? '': 'M: '.number_format($fleetRow['fleet_resource_metal'],0,',','.');
-        $c = ($fleetRow['fleet_resource_crystal'] <= 0) ? '' : 'C: '.number_format($fleetRow['fleet_resource_metal'],0,',','.');
-        $d = ($fleetRow['fleet_resource_deuterium'] <= 0) ? '' : 'D: '.number_format($fleetRow['fleet_resource_deuterium'],0,',','.');
-
+        $resDiv = "<div class='col-lg-12' style='margin-top: 15px;'>".$m."".$c."".$d."".$dm;
 
         if ($this->IsPhalanx || $SpyTech >= 4 || $Owner){
 
@@ -304,14 +305,14 @@ class FlyingFleetsTable
                 $Ship    = explode(',', $Group);
                 if($Owner)
                 {
-                    $FleetPopup 	.= '<div class=\'row\'><div class=\'col-lg-6\'>'.$LNG['tech'][$Ship[0]].':</div><div class=\'col-lg-2\'>'.pretty_number($Ship[1]).'</div><div class=\'col-lg-4\'><div>'.$m.'</div><div>'.$c.'</div><div>'.$d.'</div></div></div>';
+                    $FleetPopup 	.= '<div class=\'row\'><div class=\'col-lg-6\'>'.$LNG['tech'][$Ship[0]].':</div><div class=\'col-lg-2\'>'.pretty_number($Ship[1]).'</div></div>';
                     $shipsData[]	= floatToString($Ship[1]).' '.$LNG['tech'][$Ship[0]];
                 }
                 else
                 {
                     if($SpyTech >= 8)
                     {
-                        $FleetPopup 	.= '<div class=\'row\'><div class=\'col-lg-6\'>'.$LNG['tech'][$Ship[0]].':</div><div class=\'col-lg-2\'>'.pretty_number($Ship[1]).'</div><div class=\'col-lg-4\'><div>'.$m.'</div><div>'.$c.'</div><div>'.$d.'</div></div></div>';
+                        $FleetPopup 	.= '<div class=\'row\'><div class=\'col-lg-6\'>'.$LNG['tech'][$Ship[0]].':</div><div class=\'col-lg-2\'>'.pretty_number($Ship[1]).'</div></div>';
                         $shipsData[]	= floatToString($Ship[1]).' '.$LNG['tech'][$Ship[0]];
                     }
                     else
@@ -328,7 +329,7 @@ class FlyingFleetsTable
             $textForBlind	= $LNG['cff_no_fleet_data'];
         }
 
-        $FleetPopup  .= '</div>" id="'.hash('SHA1',rand(9999,9999999999)).'" class="ttip '.$FleetType.'">'.$Text .'</a><div class="textForBlind"> ('.$textForBlind.')</div>';
+        $FleetPopup  .= '</div>'.$resDiv.' " id="'.hash('SHA1',rand(9999,9999999999)).'" class="ttip '.$FleetType.'">'.$Text .'</a><div class="textForBlind"> ('.$textForBlind.')</div>';
 
         return $FleetPopup;
     }

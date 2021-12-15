@@ -1,3 +1,11 @@
+### _v2.0.6 ShaoKhan 10.12.2021_
+<span style="color:red">[Bugs]</span> :
+- Mission wurde bei den Flotten nicht angezeigt
+
+### _v2.0.6 ShaoKhan 10.12.2021_
+<span style="color: yellow;">[Design] :</span>
+- changed flying fleets in overview 
+
 ### _v2.0.5 ShaoKhan 05.12.2021_
 <span style="color:red">[Bugs]</span> :
 - ankommende Flotte wurde in der Übersicht nicht angezeigt 

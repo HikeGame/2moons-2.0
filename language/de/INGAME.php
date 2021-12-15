@@ -427,6 +427,10 @@ $LNG['rs_sum'] = 'Total';
 $LNG['rs_daily'] = 'Pro Tag';
 $LNG['rs_weekly'] = 'Pro Woche';
 $LNG['rs_ress_bonus'] = 'Bonus(Offiziere/DM-Bonus):';
+$LNG['rs_metal'] = 'Metall';
+$LNG['rs_crystal'] = 'Kristall';
+$LNG['rs_deuterium'] = 'Deuterium';
+$LNG['rs_darkmatter'] = 'Schwarze Materie';
 
 //----------------------------------------------------------------------------//
 //OFFICIERS

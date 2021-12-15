@@ -432,6 +432,10 @@ $LNG['rs_sum'] = 'Total';
 $LNG['rs_daily'] = 'Daily Production:';
 $LNG['rs_weekly'] = 'Weekly Production:';
 $LNG['rs_ress_bonus'] = 'Bonus (Officers/Bonus):';
+$LNG['rs_metal'] = 'Metal';
+$LNG['rs_crystal'] = 'Crystal';
+$LNG['rs_deuterium'] = 'Deuterium';
+$LNG['rs_darkmatter'] = 'Dark Matter';
 
 //----------------------------------------------------------------------------//
 // Oficiais

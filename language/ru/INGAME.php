@@ -415,6 +415,10 @@ $LNG['rs_sum']                            = 'Всего в час';
 $LNG['rs_daily']                          = 'Всего в день';
 $LNG['rs_weekly']                         = 'Всего в неделю';
 $LNG['rs_ress_bonus']                     = 'Офицеры + Инновационные разработки';
+$LNG['rs_metal'] = 'Металл';
+$LNG['rs_crystal'] = 'Кристалл';
+$LNG['rs_deuterium'] = 'Дейтерий';
+$LNG['rs_darkmatter']                     = 'Черная материя';
 
 // Офицеры
 $LNG['of_recruit']                        = 'Нанять';

@@ -40,7 +40,7 @@ $( document ).ready(function() {
 		$.ajax({
 			method: "POST",
 			url: "getSystem.php",
-			data: { x: x, y: y }
+			data: { x: y, y: x }
 		})
 			.done(function( msg ) {
 				if(msg.length > 0) {

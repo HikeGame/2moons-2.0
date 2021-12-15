@@ -175,27 +175,22 @@
                 $('#' + id).append('<div class="' + id + '">' + text + '</div>');
 
                 $('.' + id).css({
-                    'background': '#06130b',
-                    'color': '#FFF',
+                    'background': '#343a40',
                     'position': 'absolute',
                     'width': '30rem',
                     'height': 'auto',
                     'border': '1px solid #000000',
-
-                    /*'-webkit-box-shadow': '0px 0px 15px 3px #000000',
-                    'box-shadow': '0px 0px 15px 3px #000000',*/
-
                     'box-shadow': '5px 5px 21px 8px #000000',
                     '-webkit-box-shadow': '5px 5px 21px 8px #000000',
-
                     'z-index': '999',
                     'filter': 'Alpha(opacity=100)',
                     'opacity': '.9',
                     'moz-opacity': '1',
                     'padding': '15px',
-                    'top': '15px',
+                    'top': '5px',
                     'left': '30px',
                     'font-size': '1em',
+                    'color': '#FFFFFF',
                 })
             }, function () {
                 let id = $(this).attr('id');
