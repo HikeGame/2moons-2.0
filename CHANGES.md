@@ -1,4 +1,11 @@
-### _v2.0.6 ShaoKhan 10.12.2021_
+### _v2.0.8 ShaoKhan 26.12.2021_
+<span style="color: green;">[Improvement]</span>
+- Resourcencounter
+
+<span style="color:red">[Bugs]</span> :
+- Fehler bei Abbruch der Forschung 
+
+### _v2.0.7 ShaoKhan 10.12.2021_
 <span style="color:red">[Bugs]</span> :
 - Mission wurde bei den Flotten nicht angezeigt
 
