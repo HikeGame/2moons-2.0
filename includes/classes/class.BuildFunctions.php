@@ -107,6 +107,7 @@ class BuildFunctions
         return $price;
     }
 
+
     public static function isTechnologieAccessible($USER, $PLANET, $Element)
     {
         global $requeriments, $resource;
