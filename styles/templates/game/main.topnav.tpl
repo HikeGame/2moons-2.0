@@ -15,8 +15,8 @@
                                     {$resourceData.current = $resourceData.max + $resourceData.used}
                                     <img src="{$dpath}images/{$resourceData.name}.png" alt="{$resourceData.name}" title="{$resourceData.name}">
                                     {if $resourceID != 911}
-                                        <span class="res_item {$resClass}" title="{$resourceData.production|number_format:0:",":"."} pro Stunde"> / {shortly_number($resourceData.max)}</span>
-                                    {else}
+                                        <span class="res_item {$resClass}" data-max="{$resourceData.max}" title="{$resourceData.production|number_format:0:",":"."} pro Stunde"> / {shortly_number($resourceData.max)}</span>
+                                    {else} {*energy*}
                                         {if $resourceData.current < 0} {assign "posneg" 'style="color:red;"'} {else} {assign "posneg" 'style="color: lightgreen;"'}{/if}
                                         <span class="res_item" {$posneg}>{shortly_number($resourceData.current)}</span>
                                     {/if}
@@ -24,7 +24,7 @@
 
                                 {else}
                                     <img src="{$dpath}images/{$resourceData.name}.png" alt="{$resourceData.name}" title="{$resourceData.name}">
-                                    <span class="res_item {$resClass}" data-current="{$resourceData.current}" data-production="{$resourceData.production}" title="{$resourceData.production|number_format:0:",":"."} pro Stunde">
+                                    <span class="res_item {$resClass}"  data-max="{$resourceData.max}" data-current="{$resourceData.current}" data-production="{$resourceData.production}" title="{$resourceData.production|number_format:0:",":"."} pro Stunde">
                                         {$resourceData.current|number_format:0:",":"."}
                                     </span>
                                     {if $resourceID != 911}
@@ -75,16 +75,20 @@
                                 let src = $('.cont_' +{$resourceData.name|json});
                                 let current = parseInt(src.attr('data-current'));
                                 let add = parseInt(src.data('production'));
+                                let max = parseInt(src.attr('data-max'));
+
                                 add /= 3600;
 
 
-                                if ({$vmode} == 0){
-                                    setInterval(() => {
-                                        current += add;
-                                        src.text(Trenner(Number(current).toFixed()));
-                                    }, 1000);
-                                }
+                                if ({$vmode} == 0){ //kein U-mode
 
+                                    if (max > (current += add)){
+                                        setInterval(() => {
+                                            current += add;
+                                            src.text(Trenner(Number(current).toFixed()));
+                                        }, 1000);
+                                    }
+                                }
                             });
                         </script>
                     {/foreach}
