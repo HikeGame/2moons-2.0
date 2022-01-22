@@ -3,40 +3,36 @@
   margin: 5px 0;
   font-size: 1em;
 
-
-  .row{
-    align-items: center;
-  }
-
-  .flight, .return{
+  .flight {
     text-align: left;
+
+    &.attack {
+      background: linear-gradient(rgba(125, 10, 5, 0.8), #000000);
+      color: #FFFFFF;
+      padding: 5px 10px;
+      width: 100%;
+    }
+
+
+    &.owncolony {
+      background: linear-gradient(rgba(15, 145, 5, 0.8), #000000);
+      color: #FFFFFF;
+      padding: 5px 10px;
+      width: 100%;
+    }
   }
 
-  .flight.attack {
-    background: linear-gradient(rgba(125, 10, 5, 0.8), #000000);
-    color: #FFFFFF;
-    padding: 5px 10px;
-    width: 100%;
+  .return {
+    text-align: left;
+
+    &.owncolony, &.owntransport {
+      background: linear-gradient(rgba(135, 130, 135, 0.8), #000000);
+      color: #FFFFFF;
+      padding: 5px 10px;
+      width: 100%;
+    }
+
   }
-
-
-  .flight.owncolony {
-    background: linear-gradient(rgba(15, 145, 5, 0.8), #000000);
-    color: #FFFFFF;
-    padding: 5px 10px;
-    width: 100%;
-    font-size: 1.2em;
-  }
-
-
-
-  .return.owncolony, .flight.owntransport, .return.owntransport {
-    background: linear-gradient(rgba(135, 130, 135, 0.8), #000000);
-    color: #FFFFFF;
-    padding: 5px 10px;
-    width: 100%;
-  }
-
 }
 
 
