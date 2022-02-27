@@ -9,6 +9,7 @@
 <div class="title" style="margin: 0 -5px 0 -5px;">
 	{$LNG.mg_message_title}
 </div>
+
 <table style="width:100%;">
 	{if $MessID != 999}
 	<tr>
@@ -32,7 +33,9 @@
 	<tr style="height: 20px;">
 		<td>{$LNG.mg_action}</td>
 		<td>{$LNG.mg_date}</td>
-		<td>{if $MessID != 999}{$LNG.mg_from}{else}{$LNG.mg_to}{/if}</td>
+		<td>
+			{if $MessID != 999}{$LNG.mg_from}{else}{$LNG.mg_to}{/if}
+		</td>
 		<td>{$LNG.mg_subject}</td>
 	</tr>
 	{foreach $MessageList as $Message}
@@ -44,7 +47,7 @@
 		<td>{$Message.from}</td>
 		<td>{$Message.subject}
 		{if $Message.type == 1 && $MessID != 999}
-		<a href="#" onclick="return Dialog.PM({$Message.sender}, Message.CreateAnswer('{$Message.subject}'));" title="{$LNG.mg_answer_to} {strip_tags($Message.from)}"><i class="far fa-envelope" title="Message privé" style="font-size: 15px;"></i></a>
+		<a href="#" onclick="return Dialog.PM({$Message.sender}, Message.CreateAnswer('{$Message.subject}'));" title="{$LNG.mg_answer_to} {strip_tags($Message.from)}"><i class="far fa-envelope" title="{$LNG.Messages}" style="font-size: 15px;"></i></a>
 		{/if}
 		</td>
 	</tr>
