@@ -15,7 +15,7 @@
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
 			<ul class="nav navbar-nav">
 				<li><a href="index.php">{$LNG.menu_index}</a></li>
-				<li><a href="index.php?page=board" target="board">{$LNG.forum}</a></li>
+				<li><a href="https://space-tactics.com/forum" target="_blank">{$LNG.forum}</a></li>
 				<li><a href="index.php?page=news">{$LNG.menu_news}</a></li>
 				<li><a href="index.php?page=rules">{$LNG.menu_rules}</a></li>
 				<li><a href="index.php?page=battleHall">{$LNG.menu_battlehall}</a></li>

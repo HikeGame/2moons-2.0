@@ -32,15 +32,14 @@ $( document ).ready(function() {
 		let system = data.split('-');
 		let x = system[0];
 		let y = system[1];
-		let val = "";
+		let z = $(this).attr('data-name');
 
-
-		//console.info(x,y);
+		console.warn(z);
 
 		$.ajax({
 			method: "POST",
 			url: "getSystem.php",
-			data: { x: y, y: x }
+			data: { x: y, y: x, z: z}
 		})
 			.done(function( msg ) {
 				if(msg.length > 0) {

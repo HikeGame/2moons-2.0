@@ -18,6 +18,7 @@
 		{if isModuleAvailable($smarty.const.MODULE_GALAXY)}<div class="menu_content_left-link"><a href="game.php?page=galaxy">{$LNG.lm_galaxy}</a></div>{/if}
 		{if $authlevel > 0}
 			<div class="menu_content_left-link"><a href="game.php?page=galaxynew">{$LNG.lm_galaxy}-new</a></div>
+			<div class="menu_content_left-link"><a href="game.php?page=playertrader">Händler</a></div>
 		{/if}
 		{if isModuleAvailable($smarty.const.MODULE_ALLIANCE)}<div class="menu_content_left-link"><a href="game.php?page=alliance">{$LNG.lm_alliance}</a></div>{/if}
 		{if isModuleAvailable($smarty.const.MODULE_SUPPORT)}<div class="menu_content_left-link"><a href="game.php?page=ticket">{$LNG.lm_support}</a></div>{/if}

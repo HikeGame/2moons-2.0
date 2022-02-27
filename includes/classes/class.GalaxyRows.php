@@ -180,8 +180,12 @@ class GalaxyRows
     {
         global $USER, $LNG;
 
+        
+        $USER["total_points"] = $this->galaxyRow["total_points"];
+        
         $IsNoobProtec = CheckNoobProtec($USER, $this->galaxyRow, $this->galaxyRow);
         $Class = array();
+    
 
         if($this->galaxyRow['banaday'] > TIMESTAMP && $this->galaxyRow['urlaubs_modus'] == 1){
             $Class = array('vacation', 'banned');
@@ -204,6 +208,7 @@ class GalaxyRows
         elseif($IsNoobProtec['StrongPlayer']){
             $Class = array('strong');
         }
+        
 
         $this->galaxyData[$this->galaxyRow['planet']]['user'] = array(
             'id'         => $this->galaxyRow['userid'],

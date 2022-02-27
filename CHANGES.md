@@ -1,5 +1,9 @@
 ### _v2.0.8 ShaoKhan 26.12.2021_
 <span style="color: green;">[Improvement]</span>
+- Resourcen menu sticky (playerwish)
+
+### _v2.0.8 ShaoKhan 26.12.2021_
+<span style="color: green;">[Improvement]</span>
 - Resourcencounter
 
 <span style="color:red">[Bugs]</span> :

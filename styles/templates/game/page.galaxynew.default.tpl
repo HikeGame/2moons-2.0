@@ -6,34 +6,20 @@
             <span class="text-center">{$LNG.starsysteminfo}</span>
         </div>
     </div>
+
     <div class="col-lg-12 content_page system-container">
-        {*{$sector[1][99]['anz']}*}
 
-        {for $x=1 to {$size_y} }
-            <div class="row">
-            {for $y=1 to {$size_x} }
-                <div class="system system_{$x}-{$y} anz-{$sector[{$x}][{$y}][0]['anz']}" id="{$x}-{$y}" ></div>
-                {if $y eq 99}</div>{/if}
-            {/for}
+    {for $i=1 to {$y} }
+        <div class="row">
+        {for $j=1 to {$x} }
+            <div class="system system_{$i}-{$j} anz-{$playerdata|count}" id="{$i}-{$j}" data-name="{$uni}"></div>
         {/for}
+        {if $x mod 99 < 0}</div>{/if}
+        </div>
+    {/for}
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {*#############################################################################*}
-    <div class="content_page">
+    {*<div class="content_page">
         <div class="title">
             {$LNG.lm_galaxy}
         </div>
@@ -240,5 +226,5 @@
         status_ok = '{$LNG.gl_ajax_status_ok}';
         status_fail = '{$LNG.gl_ajax_status_fail}';
         MaxFleetSetting = {$settings_fleetactions};
-    </script>
+    </script>*}
 {/block}

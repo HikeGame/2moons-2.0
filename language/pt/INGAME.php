@@ -19,6 +19,7 @@
 
 // 2Moons - Copyright (C) 2012  Jan Kröpke
 
+
 $LNG['Messages']							= 'Mensagens';
 $LNG['write_message']						= 'Escrever mensagem';
 
@@ -387,7 +388,7 @@ $LNG['bd_lab_required']					    = 'Primeiro tens de construir um laboratorio de 
 $LNG['bd_building_lab']					    = 'Não se pode fazer pesquisas quando se esta a subir o laboratório de nível';
 $LNG['bd_max_lvl']                          = 'Nível Max.:';
 $LNG['bd_lvl']								= 'Nível';
-$$LNG['bd_research']						= 'Pesquisa para';
+$LNG['bd_research']						= 'Pesquisa para';
 $LNG['bd_shipyard_required']				= 'Terás de construir um hangar primeiro!';
 $LNG['bd_building_shipyard']				= 'Não podes construir naves enquanto estiveres a subir o hangar de nível';
 $LNG['bd_available']						= 'Disponível: ';
