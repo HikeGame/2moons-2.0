@@ -232,3 +232,6 @@ define('ELEMENT_RESOURCE_ON_STEAL'	, 16777216);
 
 // DARKMATTER BONUS FOR VOTING
 const VOTE_DARKMATTER = 25;
+
+// Minimal resources to get at the trader
+const MIN_RESOURCES_TO_TRADE = 250;

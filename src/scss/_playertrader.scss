@@ -1,3 +1,14 @@
+.trader-headline{
+  position: relative;background: rgba(125,10,4,0.91);
+  color: #FFFFFF;
+  padding: 2px 5px;
+  height: 20px;
+  width: auto;
+  font-size: 12px;
+  font-family: inherit;
+  transform: rotateX(45deg);
+}
+
 .form-select, .form-select option {
   background-color: rgb(33, 36, 40);
   color: #bcbcbc;
@@ -10,6 +21,20 @@
 
 .courses {
   font-size: small;
+}
+
+.toggleinfo-open{
+
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  margin: -25px 10px;
+}
+
+.toggleinfo{
+  display: none;
+  background: rgba(125,125,125,0.6);
+  padding: 10px 20px;
 }
 
 .trade-table {
@@ -35,7 +60,7 @@
     position: relative;
     height: 30px;
     text-align: center;
-    width: 6rem;
+    width: 8rem;
     cursor: pointer;
 
     span {
@@ -95,6 +120,5 @@
       border: 1px solid #FFFFFF;
     }
   }
-
 }
 
