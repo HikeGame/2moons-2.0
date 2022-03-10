@@ -30,24 +30,18 @@ class ShowPlayertraderPage extends AbstractGamePage
         $db = Database::get();
         
         //select today change course
-        $select = "SELECT *, DATE(setDate) FROM %%PLAYERTRADER_COURSE%% WHERE DATE(setDate) = CURDATE() ORDER by setDate DESC LIMIT 1; ";
-        $course = $db->select($select, []);
-        
-        if(!isset($course) || empty($course)){
-            $select = "SELECT *, DATE(setDate) FROM %%PLAYERTRADER_COURSE%% WHERE setDate < DATE_ADD(NOW(), INTERVAL -1 HOUR) ORDER by setDate DESC LIMIT 1; ";
-            $course = $db->select($select, []);
-        }
+        $course = $this->getAverageCourse();
         
         //get Player trades
         $trades           = "SELECT pt.*, u.username FROM %%PLAYERTRADER%% pt, %%USERS%% u WHERE pt.playerId = u.id  ORDER BY pt.startDate DESC";
         $tradesCollection = Database::get()->select($trades);
-
+        
         // delete zero trades
         
-        $i=0;
+        $i = 0;
         foreach($tradesCollection as $trade){
             
-            $tradesCollection[$i]["buyRes"] = $LNG['rs_'.$trade["resType"]];
+            $tradesCollection[$i]["buyRes"]  = $LNG['rs_'.$trade["resType"]];
             $tradesCollection[$i]["sellRes"] = $LNG['rs_'.$trade["changeRes"]];
             
             if($trade["playerId"] == $USER["id"]){
@@ -109,8 +103,8 @@ class ShowPlayertraderPage extends AbstractGamePage
             
             //insert into trader
             $this::setToTrader($USER["id"], $resname, $rescount, $changeAmount, $changeName, $PLANET['id'], $USER["galaxy"], $USER["system"], $USER["planet"]);
-           
-            $this->printMessage(sprintf($LNG["trade_SendToTraderSuccess"],number_format($rescount, 0, ',', '\''), ucfirst($LNG['rs_'.$resname])), [['label' => "weiter", 'url' => 'game.php?page=playertrader']]);
+            
+            $this->printMessage(sprintf($LNG["trade_SendToTraderSuccess"], number_format($rescount, 0, ',', '\''), ucfirst($LNG['rs_'.$resname])), [['label' => "weiter", 'url' => 'game.php?page=playertrader']]);
         }
         else{
             $this->printMessage($LNG["trade_NotEnoughResources"], [['label' => "weiter", 'url' => 'game.php?page=playertrader']]);
@@ -201,9 +195,9 @@ class ShowPlayertraderPage extends AbstractGamePage
         }
         
         if($buy < MIN_RESOURCES_TO_TRADE){
-            $buy = ($buy <= 0) ? 0 : $buy;
-            $tradeMessage = sprintf($LNG['trade_BuyEmptyOrZero'],$buy,ucfirst($tradeData["resType"]),MIN_RESOURCES_TO_TRADE, ucfirst($tradeData["resType"]));
-            $trade = FALSE;
+            $buy          = ($buy <= 0) ? 0 : $buy;
+            $tradeMessage = sprintf($LNG['trade_BuyEmptyOrZero'], $buy, ucfirst($tradeData["resType"]), MIN_RESOURCES_TO_TRADE, ucfirst($tradeData["resType"]));
+            $trade        = FALSE;
         }
         
         # Trade ist nicht mehr vorhanden
@@ -223,13 +217,13 @@ class ShowPlayertraderPage extends AbstractGamePage
             $tradeMessage = $LNG['trade_BuyTooMuch'];
             $trade        = FALSE;
         }
-       
+        
         # Kein passender Planet zum Spieler gefunden
         if(!key_exists($plid, $USER["PLANETS"])){
             $tradeMessage = $LNG['trade_PlanetManipulation'];
             $trade        = FALSE;
         }
-
+        
         if($tradeData["playerId"] == $USER["id"]){
             $tradeMessage = "Du willst mit dir selber handeln ? Sprichst du auch viel mit dir selbst ?";
             $trade        = FALSE;
@@ -239,10 +233,9 @@ class ShowPlayertraderPage extends AbstractGamePage
             
             $sellerResource      = ucfirst($tradeData["resType"][0]);
             $sellerWantsResource = ucfirst($tradeData["changeRes"][0]);
-            $select              = "SELECT `".$sellerResource.$sellerWantsResource."` course, DATE(setDate) datum FROM %%PLAYERTRADER_COURSE%% ORDER by setDate DESC LIMIT 1; ";
-            $course              = Database::get()->select($select, []);
-            $aktCourse           = $course[0]["course"];
-            $sendResources       = ceil($buy * $aktCourse);
+            $course              = $this->getAverageCourse();
+            $aktCourse           = $course[0][$sellerWantsResource.$sellerResource];
+            $sendResources       = ceil($buy * $aktCourse) / 10;
             
             $updateTrader = "UPDATE %%PLAYERTRADER%% SET resCount = ".($tradeData["resCount"] - $buy).", changeAmount = ".($tradeData["changeAmount"] - $sendResources)." WHERE id = :tradeId LIMIT 1";
             Database::get()->update($updateTrader, ['tradeId' => $tradeData["id"]]);
@@ -256,7 +249,7 @@ class ShowPlayertraderPage extends AbstractGamePage
                 ':planet'   => $tradeData["planetId"],
             ]);
             
-            $newOnPlanetResource = ceil($planeteResources[0][$tradeData["changeRes"]] + $sendResources);
+            $newOnPlanetResource = ceil($planeteResources[0][$tradeData["changeRes"]] - $sendResources);
             $vals                = [$tradeData["changeRes"].' = '.$newOnPlanetResource, 'last_update = '.time()];
             $rem1                = "UPDATE %%PLANETS%% SET ".implode(',', $vals)." WHERE id = :planetId;";
             Database::get()->update($rem1, ['planetId' => $tradeData["planetId"]]);
@@ -274,26 +267,33 @@ class ShowPlayertraderPage extends AbstractGamePage
                 ':planet'   => $plid,
             ]);
             
-            $newOnBuyerResource1 = ceil($planeteBuyerResources[0][$tradeData["changeRes"]] - $sendResources);
-            $newOnBuyerResource2 = ceil($planeteBuyerResources[0][$tradeData["resType"]] + $buy);
+            $newOnBuyerResource1 = ceil($planeteBuyerResources[0][$tradeData["changeRes"]] + $sendResources);
+            $newOnBuyerResource2 = ceil($planeteBuyerResources[0][$tradeData["resType"]] - $buy);
             
-            $vals = [$tradeData["changeRes"].' = '.$newOnBuyerResource1, $tradeData["resType"].' = '.$newOnBuyerResource2, 'last_update = '.time()];
+            $vals = [$tradeData["changeRes"].' = '.$newOnBuyerResource1, 'last_update = '.time()]; // $tradeData["resType"].' = '.$newOnBuyerResource2,
             $rem2 = "UPDATE %%PLANETS%% SET ".implode(',', $vals)." WHERE id = :planetId;";
             Database::get()->update($rem2, ['planetId' => $plid]);
             $PLANET[$tradeData["changeRes"]] = $newOnBuyerResource1;
-            $PLANET[$tradeData["resType"]]   = $newOnBuyerResource2;
+            #$PLANET[$tradeData["resType"]]   = $newOnBuyerResource2;
             $this->ecoObj->setData($USER, $PLANET);
             $this->ecoObj->ReBuildCache();
             [$USER, $PLANET] = $this->ecoObj->getData();
             $PLANET['eco_hash'] = $this->ecoObj->CreateHash();
             
-            $tradeMessage = sprintf($LNG['trade_Success'],number_format($buy, 0, ',', '.'),ucfirst($sellType), number_format($sendResources, 0, ',', '.'), ucfirst($buyType));
-            #$tradeMessage = "Du konntest erfolgreich ".number_format($buy, 0, ',', '.')." ".ucfirst($sellType)." gegen ".number_format($sendResources, 0, ',', '.')." ".ucfirst($buyType)." eintauschen";
             
+            $tradeMessage = sprintf($LNG['trade_Success'], number_format($buy, 0, ',', '.'), ucfirst($LNG['rs_'.$sellType]), number_format($sendResources, 0, ',', '.'), ucfirst($LNG['rs_'.$buyType]));
             
-            // belade und versende Flotte des Käufers
+            $seller     = PlayerUtil::getPlayerByIdOrPlanetId($tradeData["playerId"], 0);
+            $buyer      = PlayerUtil::getPlayerByIdOrPlanetId($USER["id"]);
+            $sellerText = sprintf($LNG["trade_SellerMessageText"], $buyer["username"], number_format($buy, 0, ',', '.'), ucfirst($LNG['rs_'.$sellType]), number_format($sendResources, 0, ',', '.'), ucfirst($LNG['rs_'.$buyType]));
+            $buyerText = sprintf($LNG["trade_BuyerMessageText"], number_format($sendResources, 0, ',', '.'), ucfirst($LNG['rs_'.$buyType]),number_format($buy, 0, ',', '.'), ucfirst($LNG['rs_'.$sellType]));
+            //send to seller
+            PlayerUtil::sendMessage($tradeData["playerId"], 0, "Handelsposten", 0, "Handel erfolgreich", $sellerText, time(), 0, 1);
+            PlayerUtil::sendMessage(           $USER["id"], 0, "Handelsposten", 0, "Handel erfolgreich",  $buyerText, time(), 0, 1);
+            
             // Gebühr für Händler
-            // Send ingame msg to buyer and seller
+            // belade und versende Flotte des Käufers
+            
             $this->printMessage($tradeMessage, [['label' => "weiter", 'url' => 'game.php?page=playertrader']]);
         }
         else{
@@ -308,4 +308,23 @@ class ShowPlayertraderPage extends AbstractGamePage
         return $t[1];
     }
     
+    
+    /**
+     * get average courses
+     *
+     * @return array
+     * @throws Exception
+     */
+    private function getAverageCourse(): array
+    {
+        $qry = "SELECT
+                    ROUND(AVG(CD),2) CD,
+                    ROUND(AVG(CM),2) CM,
+                    ROUND(AVG(MD),2) MD,
+                    ROUND(AVG(MC),2) MC,
+                    ROUND(AVG(DC),2) DC,
+                    ROUND(AVG(DM),2) DM
+                FROM %%PLAYERTRADER_COURSE%% WHERE CD > 0 AND CM > 0 AND MD > 0 AND MC > 0 AND DC > 0 AND DM > 0";
+        return Database::get()->select($qry, []);
+    }
 }

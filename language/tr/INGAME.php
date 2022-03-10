@@ -1212,3 +1212,5 @@ $LNG["trade_InfoText"]            = "Buraya kaç tane kaynak satmak istediğiniz
                         Satın alırken ne kadar satın almak istediğinizi belirtebilirsiniz. Kaynaklar (hala) hemen kredilendirilir.";
 $LNG["trade_BetaTest"]            = "BETA - Kullanıcı Testi";
 $LNG["trade_ownTrade"]            = "kendi ticareti";
+$LNG["trade_SellerMessageText"] = "<b>%s</b>'den bir gemi ticaret merkezine demirledi ve %s %s için %s %s aldı.";
+$LNG["trade_BuyerMessageText"] = "Geminiz ticaret noktasına demirledi ve %s %s için %s %s aldı.";

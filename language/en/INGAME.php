@@ -1211,3 +1211,5 @@ $LNG["trade_InfoText"]            = "You enter here how many resources you want 
                         When buying you can specify how much you want to buy. Resources are (still) credited immediately.";
 $LNG["trade_BetaTest"]            = "BETA - User Test";
 $LNG["trade_ownTrade"]            = "own trade";
+$LNG["trade_SellerMessageText"]   = "A ship from <b>%s</b> docked at the trading post and picked up %s %s for %s %s.";
+$LNG["trade_BuyerMessageText"]    = "Your ship docked at the trading post and picked up %s %s for %s %s.";

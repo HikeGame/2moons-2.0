@@ -685,4 +685,21 @@ class PlayerUtil
 
 
     }
+    
+    static public function getPlayerByIdOrPlanetId($playerId = 0, $planetId = 0)
+    {
+       
+        if($playerId > 0){
+            $sql			= "SELECT username, lang FROM %%USERS%% WHERE id = :userId;";
+            $result		= Database::get()->selectSingle($sql, array(
+                ':userId'	=> $playerId
+            ));
+        }elseif($planetId > 0){
+            $qry = "SELECT * FROM %%PLANETS%% WHERE id_owner = :planetId";
+            $result = Database::get()->select($qry,[":planetId" => $planetId]);
+        }else{
+            $result = ["error" => "Eingabefehler"];
+        }
+        return $result;
+    }
 }

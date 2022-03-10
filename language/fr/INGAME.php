@@ -1188,3 +1188,5 @@ $LNG["trade_InfoText"]            = "Vous entrez ici combien de ressources vous 
                         Lors de l'achat, vous pouvez spécifier le montant que vous souhaitez acheter. Les ressources sont (encore) créditées immédiatement.";
 $LNG["trade_BetaTest"]            = "BÊTA - Test utilisateur";
 $LNG["trade_ownTrade"]            = "propre commerce";
+$LNG["trade_SellerMessageText"]   = "Un navire de <b>%s</b> a accosté au poste de traite et a récupéré %s %s pour %s %s.";
+$LNG["trade_BuyerMessageText"]    = "Votre navire a accosté au poste de traite et a récupéré %s %s pour %s %s.";

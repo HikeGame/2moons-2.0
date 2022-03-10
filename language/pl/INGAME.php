@@ -1208,3 +1208,5 @@ $LNG["trade_InfoText"]            = "Tu wpisujesz ile zasobów chcesz sprzedać 
                         Przy zakupie możesz określić, ile chcesz kupić. Zasoby są (nadal) przyznawane natychmiast.";
 $LNG["trade_BetaTest"]            = "BETA - Test użytkownika";
 $LNG["trade_ownTrade"]            = "własna transakcja";
+$LNG["trade_SellerMessageText"]   = "Statek z <b>%s</b> zadokowany w punkcie handlowym i odebrał %s %s za %s %s.";
+$LNG["trade_BuyerMessageText"]    = "Twój statek zadokował w punkcie handlowym i odebrał %s %s za %s %s.";

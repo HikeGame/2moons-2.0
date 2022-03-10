@@ -1196,3 +1196,5 @@ $LNG["trade_InfoText"]            = "Ingrese aquí cuántos recursos desea vende
                         Al comprar puedes especificar cuánto quieres comprar. Los recursos (todavía) se acreditan inmediatamente.";
 $LNG["trade_BetaTest"]            = "BETA - Prueba de usuario";
 $LNG["trade_ownTrade"]            = "comercio propio";
+$LNG["trade_SellerMessageText"]   = "Un barco de <b>%s</b> atracó en el puesto comercial y recogió %s %s para %s %s.";
+$LNG["trade_BuyerMessageText"]    = "Su barco atracó en el puesto comercial y recogió %s %s para %s %s.";

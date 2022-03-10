@@ -1205,3 +1205,5 @@ $LNG["trade_InfoText"]            = "Du gibst hier an, wieviele Resourcen du ver
                         Beim kaufen kannst du angeben, wieviel du kaufen möchtest. Resourcen werden (noch) sofort gut geschrieben.";
 $LNG["trade_BetaTest"]            = "BETA - Usertest";
 $LNG["trade_ownTrade"]            = "eigener Handel";
+$LNG["trade_SellerMessageText"]   = "Ein Schiff von <b>%s</b> dockte am Handelsposten an und holte %s %s für %s %s ab.";
+$LNG["trade_BuyerMessageText"]    = "Dein Schiff dockte am Handelsposten an und holte %s %s für %s %s ab.";
