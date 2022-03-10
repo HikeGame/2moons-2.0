@@ -1,0 +1,29 @@
+{
+  "name": "space-tactics",
+  "version": "2.1.2",
+  "description": "Fork of 2moons",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "bootstrap-sass": "^3.4.3",
+    "bootstrap-scss": "^5.1.3",
+    "jquery": "^3.6.0",
+    "sass": "^1.49.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShaoKhan/2moons-2.0.git"
+  },
+  "author": "ShaoKhan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShaoKhan/2moons-2.0/issues"
+  },
+  "homepage": "https://github.com/ShaoKhan/2moons-2.0#readme"
+}
