@@ -1207,3 +1207,4 @@ $LNG["trade_InfoText"]            = "Tu wpisujesz ile zasobów chcesz sprzedać 
                         Gracze mogą kupić wszystko na raz, ale nie muszą.<br />
                         Przy zakupie możesz określić, ile chcesz kupić. Zasoby są (nadal) przyznawane natychmiast.";
 $LNG["trade_BetaTest"]            = "BETA - Test użytkownika";
+$LNG["trade_ownTrade"]            = "własna transakcja";

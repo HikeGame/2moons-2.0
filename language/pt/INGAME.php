@@ -1210,3 +1210,4 @@ $LNG["trade_InfoText"]            = "Você insere aqui quantos recursos deseja v
                         Os jogadores podem comprar tudo de uma vez, mas não precisam.<br />
                         Ao comprar você pode especificar quanto quer comprar. Os recursos são (ainda) creditados imediatamente.";
 $LNG["trade_BetaTest"]            = "BETA - Teste de usuário";
+$LNG["trade_ownTrade"]            = "negociação própria";

@@ -1187,6 +1187,4 @@ $LNG["trade_InfoText"]            = "Vous entrez ici combien de ressources vous 
                         Les joueurs peuvent tout acheter en même temps, mais ce n'est pas obligatoire.<br />
                         Lors de l'achat, vous pouvez spécifier le montant que vous souhaitez acheter. Les ressources sont (encore) créditées immédiatement.";
 $LNG["trade_BetaTest"]            = "BÊTA - Test utilisateur";
-
-
-?>
+$LNG["trade_ownTrade"]            = "propre commerce";

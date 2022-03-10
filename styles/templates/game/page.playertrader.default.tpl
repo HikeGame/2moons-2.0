@@ -100,7 +100,7 @@
                                        value="{$Trade.buyRes} {$LNG['trade_buy']}">
                             </form>
                         {else}
-                            Dein eigener Verkauf
+                            {$LNG["trade_ownTrade"]}
                         {/if}
                     </div>
                 </div>

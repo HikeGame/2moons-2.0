@@ -1211,3 +1211,4 @@ $LNG["trade_InfoText"]            = "Buraya kaç tane kaynak satmak istediğiniz
                         Oyuncular her şeyi bir kerede satın alabilir, ancak buna gerek yoktur.<br />
                         Satın alırken ne kadar satın almak istediğinizi belirtebilirsiniz. Kaynaklar (hala) hemen kredilendirilir.";
 $LNG["trade_BetaTest"]            = "BETA - Kullanıcı Testi";
+$LNG["trade_ownTrade"]            = "kendi ticareti";

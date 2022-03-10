@@ -1210,3 +1210,4 @@ $LNG["trade_InfoText"]            = "You enter here how many resources you want 
                         Players can buy everything at once, but don't have to.<br />
                         When buying you can specify how much you want to buy. Resources are (still) credited immediately.";
 $LNG["trade_BetaTest"]            = "BETA - User Test";
+$LNG["trade_ownTrade"]            = "own trade";
