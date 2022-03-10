@@ -1,3 +1,8 @@
+#### _v2.1.2 ShaoKhan 10.03.2022_
+<span style="color: red;">[Bug]</span>
+- Fehler in der Berechnung beim Händler
+- Wording in Sprachdatei
+
 #### _v2.1.1 ShaoKhan 10.03.2022_
 <span style="color: green;">[Improvement]</span>
 - man kann eigene Resourcen nicht mehr beim Händler kaufen
