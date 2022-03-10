@@ -50,6 +50,10 @@ class ShowPlayertraderPage extends AbstractGamePage
             $tradesCollection[$i]["buyRes"] = $LNG['rs_'.$trade["resType"]];
             $tradesCollection[$i]["sellRes"] = $LNG['rs_'.$trade["changeRes"]];
             
+            if($trade["playerId"] == $USER["id"]){
+                $tradesCollection[$i]["aus"] = 1;
+            }
+            
             if($trade["resCount"] <= MIN_RESOURCES_TO_TRADE){
                 $del = "DELETE FROM %%PLAYERTRADER%% WHERE id = :id LIMIT 1";
                 Database::get()->delete($del, ['id' => $trade["id"]]);
@@ -223,6 +227,11 @@ class ShowPlayertraderPage extends AbstractGamePage
         # Kein passender Planet zum Spieler gefunden
         if(!key_exists($plid, $USER["PLANETS"])){
             $tradeMessage = $LNG['trade_PlanetManipulation'];
+            $trade        = FALSE;
+        }
+
+        if($tradeData["playerId"] == $USER["id"]){
+            $tradeMessage = "Du willst mit dir selber handeln ? Sprichst du auch viel mit dir selbst ?";
             $trade        = FALSE;
         }
         

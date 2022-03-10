@@ -91,12 +91,17 @@
                         <div class="col-1">1:{$CourseDM|number_format:2:',':'.'}</div>
                     {/if}
                     <div class="col-3 buyAmount">
-                        <form name="letsTrade" method="post" action="game.php?page=playertrader">
-                            <input type="text" name="buyAmount"/>
-                            <input type="hidden" name="mode" value="tradeResources"/>
-                            <input type="hidden" name="honeypot" value="{$tradeNumber|base64_encode}"/>
-                            <input type="submit" class="trader-buy-button" value="{$Trade.buyRes} {$LNG['trade_buy']}">
-                        </form>
+                        {if ! isset($Trade.aus) }
+                            <form name="letsTrade" method="post" action="game.php?page=playertrader">
+                                <input type="text" name="buyAmount"/>
+                                <input type="hidden" name="mode" value="tradeResources"/>
+                                <input type="hidden" name="honeypot" value="{$tradeNumber|base64_encode}"/>
+                                <input type="submit" class="trader-buy-button"
+                                       value="{$Trade.buyRes} {$LNG['trade_buy']}">
+                            </form>
+                        {else}
+                            Dein eigener Verkauf
+                        {/if}
                     </div>
                 </div>
             </div>
