@@ -1,27 +1,16 @@
-## _v2.0.0	Danter14 17.02.2018_
+## _v2.1.1	ShaoKhan 10.03.2022_
 [Modules] :
-- Percentage with bar and text for real-time resources
-- Number of players connect
-- Planet change with arrows
+- trade implemented
 
 [Bugs] :
-- Fix of the language buddyList
-- Fix bug for debris fields on the moon that replace the fields already in place by byazrail
-- Fix bug, with destroyed moon by Kaizoku
-
-[Improvements] :
-- Ability to make high speed server
+- several bugs fixed
 
 [Optimization] :
-- Switching to php version 7.2
-
-[Design] :
-- Redesign of the bootstrap 4 login page
-- Redesign Ingame by Danter14
+- using bootstrap and jquery [WIP]
 
 [Panel administration] :
 - none
 
 ## Developer
 + Project Leader
-  - Danter14 (Hike)
+  - ShaoKhan
