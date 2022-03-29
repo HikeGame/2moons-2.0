@@ -72,36 +72,42 @@
             {assign var="tradeNumber" value="{"10"|mt_rand:99999}-{$Trade.id}-{"10"|mt_rand:99999}-{"10"|mt_rand:99}" }
             <div class="col-12 mb-2">
                 <div class="row {cycle values="odd,even"} player_trade_{$Trade.id}">
-                    <div class="col-2">{$Trade.username}</div>
+                    {*<div class="col-2">{$Trade.username}</div>
                     <div class="col-1">{$Trade.resCount|number_format:0:",":"."}</div>
                     <div class="col-1">{$Trade.buyRes}</div>
                     <div class="col-1">{$Trade.changeAmount|number_format:0:",":"."}</div>
-                    <div class="col-1">{$Trade.sellRes}</div>
+                    <div class="col-1">{$Trade.sellRes}</div>*}
+
+                    <div class="col-6">
+                        {$Trade.username} bietet {$Trade.resCount|number_format:0:",":"."} {$Trade.buyRes} gegen {$Trade.changeAmount|number_format:0:",":"."} {$Trade.sellRes}
+                    </div>
+
                     {if $Trade.resType == "crystal" AND $Trade.changeRes == "deuterium"}
-                        <div class="col-1">1:{$CourseCD|number_format:2:',':'.'}</div>
+                        <div class="col-1 course">1:{$CourseCD|number_format:2:',':'.'}</div>
                     {elseif $Trade.resType == "crystal" AND $Trade.changeRes == "metal"}
-                        <div class="col-1">1:{$CourseCM|number_format:2:',':'.'}</div>
+                        <div class="col-1 course">1:{$CourseCM|number_format:2:',':'.'}</div>
                     {elseif $Trade.resType == "metal" AND $Trade.changeRes == "deuterium"}
-                        <div class="col-1">1:{$CourseMD|number_format:2:',':'.'}</div>
+                        <div class="col-1 course">1:{$CourseMD|number_format:2:',':'.'}</div>
                     {elseif $Trade.resType == "metal" AND $Trade.changeRes == "crystal"}
-                        <div class="col-1">1:{$CourseMC|number_format:2:',':'.'}</div>
+                        <div class="col-1 course">1:{$CourseMC|number_format:2:',':'.'}</div>
                     {elseif $Trade.resType == "deuterium" AND $Trade.changeRes == "crystal"}
-                        <div class="col-1">1:{$CourseDC|number_format:2:',':'.'}</div>
+                        <div class="col-1 course">1:{$CourseDC|number_format:2:',':'.'}</div>
                     {elseif $Trade.resType == "deuterium" AND $Trade.changeRes == "metal"}
-                        <div class="col-1">1:{$CourseDM|number_format:2:',':'.'}</div>
+                        <div class="col-1 course">1:{$CourseDM|number_format:2:',':'.'}</div>
                     {/if}
-                    <div class="col-3 buyAmount">
-                        {if ! isset($Trade.aus) }
-                            <form name="letsTrade" method="post" action="game.php?page=playertrader">
-                                <input type="text" name="buyAmount"/>
+                    <div class="col-5 buyAmount">
+                        {*{if ! isset($Trade.aus) }*}
+                            <form name="letsTrade" method="post" action="game.php?page=playertrader" class="form_{$Trade.id}">
+                                <input type="text" name="buyAmount" class="buyAmount" id="{$Trade.id}"/>
                                 <input type="hidden" name="mode" value="tradeResources"/>
                                 <input type="hidden" name="honeypot" value="{$tradeNumber|base64_encode}"/>
                                 <input type="submit" class="trader-buy-button"
-                                       value="{$Trade.buyRes} {$LNG['trade_buy']}">
+                                       value="{$Trade.buyRes} {$LNG['trade_buy']} und {$Trade.sellRes} verkaufen">
                             </form>
-                        {else}
+                        Verkauft {$Trade.buyRes} gegen {$Trade.sellRes}
+                        {*{else}
                             {$LNG["trade_ownTrade"]}
-                        {/if}
+                        {/if}*}
                     </div>
                 </div>
             </div>

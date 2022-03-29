@@ -21,8 +21,14 @@ $( document ).ready(function() {
     $('.trader-buy-button').on('click',function(){
 
         let buyerAmount = $(this).prev().val();
-
         buyerAmount = (buyerAmount == "undefined" || buyerAmount == "" ) ? 0 : buyerAmount;
+    });
+
+
+    $('.buyAmount').on('keyup', function(){
+
+        var id = $(this).attr('id');
+        var tradecontainer = $('player_trade_' + id);
 
 
     });

@@ -64,7 +64,7 @@ class ShowPlayertraderPage extends AbstractGamePage
                        "CourseDC" => $course[0]["DC"],
                        "CourseDM" => $course[0]["DM"],
                       ]);
-        
+                
         $this->display('page.playertrader.default.tpl');
     }
     
@@ -236,6 +236,9 @@ class ShowPlayertraderPage extends AbstractGamePage
             $course              = $this->getAverageCourse();
             $aktCourse           = $course[0][$sellerWantsResource.$sellerResource];
             $sendResources       = ceil($buy * $aktCourse) / 10;
+            
+            echo $sellerResource . ' ---> ' . $sellerWantsResource."<br />";
+            
             
             $updateTrader = "UPDATE %%PLAYERTRADER%% SET resCount = ".($tradeData["resCount"] - $buy).", changeAmount = ".($tradeData["changeAmount"] - $sendResources)." WHERE id = :tradeId LIMIT 1";
             Database::get()->update($updateTrader, ['tradeId' => $tradeData["id"]]);
