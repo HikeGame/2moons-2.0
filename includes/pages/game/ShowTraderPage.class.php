@@ -97,19 +97,34 @@ class ShowTraderPage extends AbstractGamePage
 		$tradeResources		= array_values(array_diff(array_keys(self::$Charge[$resourceID]), array($resourceID)));
 		$tradeSum 			= 0;
 		
+		$sum=0;
+		
 		foreach($tradeResources as $tradeRessID)
 		{
-			if(!isset($getTradeResources[$tradeRessID]))
-			{
-				continue;
-			}
 			$tradeAmount	= max(0, round((float) $getTradeResources[$tradeRessID]));
+
+			$sum+= $tradeAmount * self::$Charge[$resourceID][$tradeRessID];
+		}
+		
+		if($sum>$PLANET[$resource[$resourceID]])
+		{
+			$this->printMessage(sprintf($LNG['tr_not_enought'], $LNG['tech'][$resourceID]), array(array(
+						'label'	=> $LNG['sys_back'],
+						'url'	=> 'game.php?page=trader'
+					)));
 			
+		}
+		
+		foreach($tradeResources as $tradeRessID)
+		{
+			$tradeAmount	= max(0, round((float) $getTradeResources[$tradeRessID]));
+
 			if(empty($tradeAmount) || !isset(self::$Charge[$resourceID][$tradeRessID]))
 			{
 				continue;  
 			}
 			
+
 			if(isset($PLANET[$resource[$resourceID]]))
 			{
 				$usedResources	= $tradeAmount * self::$Charge[$resourceID][$tradeRessID];
@@ -121,9 +136,12 @@ class ShowTraderPage extends AbstractGamePage
 						'url'	=> 'game.php?page=trader'
 					)));
 				}
+				else
+				{
+					$tradeSum	  						+= $tradeAmount;
+					$PLANET[$resource[$resourceID]]		-= $usedResources;
+				}
 				
-				$tradeSum	  						+= $tradeAmount;
-				$PLANET[$resource[$resourceID]]		-= $usedResources;
 			}
 			elseif(isset($USER[$resource[$resourceID]]))
 			{
@@ -141,9 +159,12 @@ class ShowTraderPage extends AbstractGamePage
 						'url'	=> 'game.php?page=trader'
 					)));
 				}
-				
-				$tradeSum	  						+= $tradeAmount;
-				$USER[$resource[$resourceID]]		-= $usedResources;
+				else
+				{
+
+					$tradeSum	  						+= $tradeAmount;
+					$USER[$resource[$resourceID]]		-= $usedResources;
+				}
 				
 				if($resourceID == 921)
 				{
