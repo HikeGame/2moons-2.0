@@ -123,7 +123,7 @@ class ShowMessagesPage extends AbstractGamePage
                 'sender'	=> $MessageRow['message_sender'],
                 'type'		=> $MessageRow['message_type'],
                 'unread'	=> $MessageRow['message_unread'],
-                'text'		=> $MessageRow['message_text'],
+                'text'		=> utf8_decode($MessageRow['message_text']),
             );
         }
 
