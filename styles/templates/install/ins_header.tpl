@@ -47,7 +47,7 @@
 <body id="step{$smarty.get.step|htmlspecialchars|default:'intro'}">
 <div id="tooltip" class="tip"></div>
 <div><p>&nbsp;</p></div>
-<table width="960">
-<tr>
-	<th colspan="3">{$header}</th>
-</tr>
+<div class="content_page" style="width: 95%;">
+	<div class="title">
+		{$header}
+	</div>
