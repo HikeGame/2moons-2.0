@@ -1,3 +1,20 @@
+body {
+	background:url("../../../theme/gow/img/bkd_page.jpg") no-repeat fixed center center #0d0d0d;
+	min-width: 1000px;
+}
+
+.title {
+	text-align: center;
+	margin: -5px -5px 5px -5px;
+	background: #28292a;
+	padding: 5px;
+	color:#fff;
+}
+
+.text-center {
+    text-align: center
+}
+
 table{
 	margin: auto;
 	width:900px;
@@ -15,6 +32,9 @@ body > table{
 }
 .no{
 	color:red;
+}
+.transparent {
+	color: gray;
 }
 
 #menu{
