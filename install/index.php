@@ -278,7 +278,7 @@ switch ($mode) {
 			case 2:
 				$error = false;
 				$ftp   = false;
-				if (version_compare(PHP_VERSION, "5.3.0", ">=")) {
+				if (version_compare(PHP_VERSION, "7.2.0", ">=")) {
 					$PHP = "<span class=\"yes\">" . $LNG['reg_yes'] . ", v" . PHP_VERSION . "</span>";
 				}
 				else {
