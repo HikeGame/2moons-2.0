@@ -65,14 +65,17 @@ function ShowRightsPage()
 				exit;
 			}
 							
-			if ($_GET['get'] == 'adm')
+			if (!isset($_GET['get'])) {
+				$WHEREUSERS	=	"";
+			} elseif ($_GET['get'] == 'adm') {
 				$WHEREUSERS	=	"AND `authlevel` = '".AUTH_ADM."'";
-			elseif ($_GET['get'] == 'ope')
+			} elseif ($_GET['get'] == 'ope') {
 				$WHEREUSERS	=	"AND `authlevel` = '".AUTH_OPS."'";
-			elseif ($_GET['get'] == 'mod')
+			} elseif ($_GET['get'] == 'mod') {
 				$WHEREUSERS	=	"AND `authlevel` = '".AUTH_MOD."'";
-			elseif ($_GET['get'] == 'pla')
-				$WHEREUSERS	=	"AND `authlevel` = '".AUTH_USR."'";			
+			} elseif ($_GET['get'] == 'pla') {
+				$WHEREUSERS	=	"AND `authlevel` = '".AUTH_USR."'";
+			}
 				
 				
 			$QueryUsers	=	$GLOBALS['DATABASE']->query("SELECT `id`, `username`, `authlevel` FROM ".USERS." WHERE `universe` = '".Universe::getEmulated()."'".$WHEREUSERS.";");
@@ -124,14 +127,17 @@ function ShowRightsPage()
 				exit;
 			}
 							
-			if ($_GET['get'] == 'adm')
+			if (!isset($_GET['get'])) {
+				$WHEREUSERS	=	"";
+			} elseif ($_GET['get'] == 'adm') {
 				$WHEREUSERS	=	"AND `authlevel` = '".AUTH_ADM."'";
-			elseif ($_GET['get'] == 'ope')
+			} elseif ($_GET['get'] == 'ope') {
 				$WHEREUSERS	=	"AND `authlevel` = '".AUTH_OPS."'";
-			elseif ($_GET['get'] == 'mod')
+			} elseif ($_GET['get'] == 'mod') {
 				$WHEREUSERS	=	"AND `authlevel` = '".AUTH_MOD."'";
-			elseif ($_GET['get'] == 'pla')
-				$WHEREUSERS	=	"AND `authlevel` = '".AUTH_USR."'";	
+			} elseif ($_GET['get'] == 'pla') {
+				$WHEREUSERS	=	"AND `authlevel` = '".AUTH_USR."'";
+			}
 				
 			$QueryUsers	=	$GLOBALS['DATABASE']->query("SELECT `id`, `username`, `authlevel` FROM ".USERS." WHERE `universe` = '".Universe::getEmulated()."'".$WHEREUSERS.";");
 				

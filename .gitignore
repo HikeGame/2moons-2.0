@@ -2,6 +2,7 @@ includes/config.php
 includes/error.log
 cache/*
 
+
 !cache/.htaccess
 
 ### JetBrains template
@@ -11,6 +12,9 @@ cache/*
 
 ## Directory-based project format:
 .idea/
+
+## Ignore at the root of the directory structure:
+.vscode/
 # if you remove the above rule, at least ignore the following:
 
 # User-specific stuff:
